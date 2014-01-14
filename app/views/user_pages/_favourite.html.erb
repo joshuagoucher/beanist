@@ -1,0 +1,11 @@
+
+<div class="list-group col-lg-3">
+	<% @favourites.each do |item| %>
+		<div class="list-group-item">
+			<h5 class="feed-title h4 text-center">
+				<%= link_to item.title, item.url, target: "_blank" %>
+			</h5>
+			<%= pluralize item.reputation_for(:votes).to_i, "votes" %>
+		</div>
+	<% end %>
+</div>

@@ -1,0 +1,38 @@
+
+
+<div class="list-group col-lg-6">
+	<% @feature.each do |item| %>
+	<div class="list-group-item">
+		<div class="row">
+			<small class="col-lg-12 editors-comment">
+				<%= item.editors_comment %>
+			</small>
+			
+			<img src="<%= item.img_url %>" class="col-lg-7 feature-picture">
+
+			<h1 class="h4 col-lg-5 feature-title">
+				<%= link_to item.title, item, target: "_blank" %>
+			</h1>
+			<p class="col-lg-5 feature-summary">
+				<%= truncate(item.summary, length: 160) %>
+			</p>
+			<small class="text-muted feature-pubdate col-lg-5 text-right">
+				<%= item.source %> / <%= item.pubdate %>
+			</small>
+
+			<div class="voter col-lg-5">
+				<strong class="vote-total inline">
+					<%= pluralize item.reputation_for(:votes).to_i, "votes" %>
+				</strong>
+				<p class="updown pull-right">
+					<%= link_to "up", vote_featured_article_path(item, type: "up"), method: "post", class: "" %>
+					/
+					<%= link_to "down", vote_featured_article_path(item, type: "down"), method: "post", class: "" %>
+				</p>
+			</div>
+		</div>
+	</div>
+	<% end %>
+</div>
+
+<%= link_to 'New Featured Article', new_featured_article_path %>

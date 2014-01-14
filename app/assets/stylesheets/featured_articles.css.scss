@@ -1,0 +1,188 @@
+// Place all the styles related to the featured_articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'bootstrap';
+
+.test {
+	background-color: blue;
+}
+
+.params {
+	margin-top: 50px;
+}
+
+.alert {
+	margin-top: 5px;
+}
+
+
+/* header */
+.head {
+	margin-top:0;
+	padding-top: 0;
+}
+
+.beanist {
+	font-family: airstreamregular;
+	padding-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.frontpage {
+	font-family: headline_onehplhs;
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.user-nav {
+	margin-bottom: 20px;
+}
+
+.signin a {
+	color:$gray-dark;
+}
+
+.signin a:hover {
+	color: $gray-light;
+	text-decoration: none;
+}
+
+.welcome {
+	font-weight: bold;
+}
+
+.signout a {
+	color: $gray-light;
+	&:hover {
+		color: $gray-dark;
+	}
+}
+
+/**/
+
+
+.column-banner {
+	margin-top: 20px;
+	margin-bottom: 0;
+	height: 30px;
+	border-top:$gray 1px solid;
+	border-bottom: $gray 1px solid;
+	/*-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+*/}
+
+.column-header {
+	text-transform: uppercase;
+	font-weight: bold;
+	color: $gray-darker;
+	padding-top: 8px;
+	margin-bottom: 10px;
+}
+
+
+.list-group-item:first-child {
+	padding-top: 0;
+	border-top: none;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.feed-column-item {
+	height: auto;
+}
+
+/**/
+
+.editors-comment {
+	margin-bottom: 5px;
+	text-transform: uppercase;
+	color: $gray;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+.feature-picture {
+	padding-bottom: 25px;
+}
+
+.feature-title {
+	margin-top: 0;
+}
+
+.feature-title a {
+	color: $gray-dark;
+	font-weight: bold;
+	transition:0.5s;
+	&:hover {
+		color: $gray-light;
+		text-decoration: none;
+	}
+}
+
+.feature-summary {
+	font-size: 12px;
+}
+
+.feature-pubdate {
+	text-transform: uppercase;
+	font-size: 10px;
+}
+.voter {
+	margin-top: 30px;
+}
+.vote-total {
+	display: inline;
+	margin-top: 20px;
+	color: $gray;
+}
+
+.updown {
+	color: $gray-light;
+	display: inline;
+	
+	a {
+		color: $gray-light;
+		transition:0.6s;
+	}
+	a:hover {
+		color: $gray-dark;
+		text-decoration: none;
+	}
+}
+
+/**/
+
+.feed-title a {
+	color: $gray-dark;
+	transition: 0.5s;
+	font-weight: bold;
+		&:hover {
+			color: $gray-light;
+			text-decoration: none;
+		}
+}
+
+.feed-updown {
+	color: $gray-light;
+	display: inline-block;
+	
+	a {
+		color: $gray-light;
+		transition:0.6s;
+	}
+	a:hover {
+		color: $gray-dark;
+		text-decoration: none;
+	}
+
+}
+
+.feed-vote-total {
+	margin-top: 20px;
+	color: $gray;
+}
+

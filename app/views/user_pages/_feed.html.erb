@@ -1,0 +1,25 @@
+<ul class="list-group col-lg-3 feed-column">
+	<% @feed.each do |item| %>
+		<li class="list-group-item col-lg-12">
+			
+			<h5 class="feed-title">
+				<%= link_to item.title, item, target: "_blank" %>
+			</h5>
+			<small class="text-muted feature-pubdate pull-left">
+				<%= time_ago_in_words(item.pubdate) %> ago
+			</small>
+			<br />
+			<strong class="pull-left">
+				<%= pluralize item.reputation_for(:votes).to_i, "votes" %>
+			</strong>
+			<p class="feed-updown pull-right">
+				<%= link_to "up", vote_feed_entry_path(item, type: "up"), method: "post", class: "" %>
+				/ 
+				<%= link_to "down", vote_feed_entry_path(item, type: "down"), method: "post", class: "" %>
+			</p>
+			<%= link_to 'delete', item, method: :delete, class: "close" %> 
+			
+			
+		</li>
+	<% end %>
+</ul>
