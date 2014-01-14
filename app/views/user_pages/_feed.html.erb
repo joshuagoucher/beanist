@@ -17,7 +17,9 @@
 				/ 
 				<%= link_to "down", vote_feed_entry_path(item, type: "down"), method: "post", class: "" %>
 			</p>
+			<% if signed_in? && current_user.admin? %>
 			<%= link_to 'delete', item, method: :delete, class: "close" %> 
+			<% end %>
 			
 			
 		</li>
