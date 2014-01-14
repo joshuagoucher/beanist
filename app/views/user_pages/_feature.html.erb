@@ -21,17 +21,28 @@
 
 			<div class="voter col-lg-5">
 				<strong class="vote-total inline">
-					<%= pluralize item.reputation_for(:votes).to_i, "votes" %>
+					<%= pluralize item.reputation_for(:votes).to_i, "vote" %>
 				</strong>
+
+				<% if current_user && !current_user.voted_for?(item) %>
+
 				<p class="updown pull-right">
-					<%= link_to "up", vote_featured_article_path(item, type: "up"), method: "post", class: "" %>
-					/
-					<%= link_to "down", vote_featured_article_path(item, type: "down"), method: "post", class: "" %>
+					<%=link_to vote_featured_article_path(item, type: "up"), method: "post" do %>
+						<span class="glyphicon glyphicon-circle-arrow-up"></span> up
+					<% end %>
+					 / 
+					<%=link_to vote_featured_article_path(item, type: "down"), method: "post" do %>
+						<span class="glyphicon glyphicon-circle-arrow-down"></span> down
+					<% end %>
 				</p>
+
+				<% end %>
+
 				<% if signed_in? && current_user.admin? %>
 					<%= link_to "delete", item, method: :delete,
                                   data: { confirm: "You sure?" } %>
 				<% end %>
+
 			</div>
 		</div>
 	</div>

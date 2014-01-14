@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
   has_secure_password
 
+  has_many :evaluations, class_name: "RSEvaluation", as: :source_id
+
+
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
 
@@ -13,6 +16,10 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   
   validates :password_confirmation, presence: true
+
+  def voted_for?(item)
+    evaluations.where(target_type: item.class, target_id: item.id).present?
+  end
 
   private
 

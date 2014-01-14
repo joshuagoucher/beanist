@@ -43,7 +43,10 @@ class FeaturedArticlesController < ApplicationController
   private
 
     def signed_in_user
-      redirect_to root_url, notice:"please signed_in" unless signed_in?
+      unless signed_in?
+        redirect_to root_url
+        flash[:warning] = "Sign in or Register to Vote!"
+      end
     end
 
     def admin_user 

@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'bootstrap';
 
+$success-color: #5cb85c;
+
 .test {
 	background-color: blue;
 }
@@ -42,10 +44,11 @@
 
 .signin a {
 	color:$gray-dark;
+	transition: 0.5s;
 }
 
 .signin a:hover {
-	color: $gray-light;
+	color: $success-color;
 	text-decoration: none;
 }
 
@@ -58,6 +61,10 @@
 	&:hover {
 		color: $gray-dark;
 	}
+}
+
+.notice-label {
+	font-size: 14px;
 }
 
 /**/
