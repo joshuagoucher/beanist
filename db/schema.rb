@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140114050252) do
+ActiveRecord::Schema.define(:version => 20140114195601) do
 
   create_table "featured_articles", :force => true do |t|
     t.string   "img_url"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(:version => 20140114050252) do
     t.datetime "updated_at",      :null => false
     t.string   "pubdate"
     t.string   "source"
-    t.datetime "created_date"
   end
 
   create_table "feed_entries", :force => true do |t|
