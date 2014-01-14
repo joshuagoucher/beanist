@@ -33,6 +33,9 @@ group :production do
   gem 'pg', '0.12.2'
 end
 
+  gem 'rails_12factor'
+
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
