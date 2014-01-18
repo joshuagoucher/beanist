@@ -1,6 +1,6 @@
 <ul class="list-group col-lg-3 feed-column">
 	<% @feed.each do |item| %>
-		<li class="list-group-item col-lg-12">
+		<li class="list-group-item col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			
 			<h5 class="feed-title">
 				<%= link_to item.title, item, target: "_blank" %>
@@ -9,17 +9,18 @@
 				<%= time_ago_in_words(item.pubdate) %> ago
 			</small>
 			<br />
-			<strong class="pull-left">
-				<%= pluralize item.reputation_for(:votes).to_i, "votes" %>
-			</strong>
+			
 			<p class="feed-updown pull-right">
-				<%= link_to "up", vote_feed_entry_path(item, type: "up"), method: "post", class: "" %>
-				/ 
-				<%= link_to "down", vote_feed_entry_path(item, type: "down"), method: "post", class: "" %>
+				<%= item.reputation_for(:votes).to_i %>
+				<%=link_to vote_feed_entry_path(item, type: "up"), method: "post" do %>
+						<span class="glyphicon glyphicon-circle-arrow-up"></span>
+					<% end %>
+					 
+					<%=link_to vote_feed_entry_path(item, type: "down"), method: "post" do %>
+						<span class="glyphicon glyphicon-circle-arrow-down"></span>
+					<% end %>
 			</p>
-			<% if signed_in? && current_user.admin? %>
-			<%= link_to 'delete', item, method: :delete, class: "close" %> 
-			<% end %>
+			
 			
 			
 		</li>

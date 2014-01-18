@@ -1,11 +1,21 @@
 
 <div class="list-group col-lg-3">
 	<% @favourites.each do |item| %>
-		<div class="list-group-item">
-			<h5 class="feed-title h4 text-center">
+		<div class="list-group-item col-lg-12
+					col-md-12 col-sm-12 col-xs-12">
+			<h5 class="feed-title h4 text-right">
 				<%= link_to item.title, item.url, target: "_blank" %>
 			</h5>
-			<%= pluralize item.reputation_for(:votes).to_i, "votes" %>
+			<p class="updown pull-right">
+					<%= item.reputation_for(:votes).to_i %>
+					<%=link_to vote_featured_article_path(item, type: "up"), method: "post" do %>
+						<span class="glyphicon glyphicon-circle-arrow-up"></span>
+					<% end %>
+					 
+					<%=link_to vote_featured_article_path(item, type: "down"), method: "post" do %>
+						<span class="glyphicon glyphicon-circle-arrow-down"></span>
+					<% end %>
+				</p>
 		</div>
 	<% end %>
 </div>

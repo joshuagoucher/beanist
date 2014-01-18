@@ -1,6 +1,6 @@
 class FeaturedArticlesController < ApplicationController
   before_filter :signed_in_user
-  before_filter :admin_user, only: [:index, :show, :new, :create, :destroy]
+  before_filter :admin_user, only: [:index, :new, :create, :destroy]
 
   def index
   	@feature = FeaturedArticle.last(8)
