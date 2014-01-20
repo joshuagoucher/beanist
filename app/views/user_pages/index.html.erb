@@ -5,7 +5,7 @@
 			</span>
 			<% end %>
 		</div>
-<div class="column-banner hidden-xs">
+<div class="column-banner hidden-xs hidden-sm">
 	<div class="container">
 	
 
@@ -24,9 +24,28 @@
 
 <div class="container">
 	<div class="row">
-		<%= render 'feed' %>
+
+		<div class="hidden-xs hidden-sm">
+			<%= render 'feed' %>
+		</div>
+
+		<h1 class="mobile-heading text-center visible-xs visible-sm">
+			Featured
+		</h1>
+
 		<%= render 'feature' %>
-		<%= render 'favourite' %>
+
+		<div class="hidden-xs hidden-sm">
+			<%= render 'favourite' %>
+		</div>
+
+		<div class="visible-xs visible-sm">
+			<h1 class="mobile-heading text-center">The Latest</h1>
+			<%= render 'feed' %>
+			<h1 class="mobile-heading text-center">Highest Rated</h1>
+			<%= render 'favourite' %>
+		</div>
+
  	</div>
 
 
