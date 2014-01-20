@@ -1,6 +1,6 @@
 class FeedEntriesController < ApplicationController
-  before_filter :signed_in_user, only: [:index, :new, :destroy, :vote]
-  before_filter :admin_user, only: [:index, :new, :create, :destroy]
+  before_filter :signed_in_user
+  before_filter :admin_user, only: [:index, :new, :create, :destroy, :update_feed]
 
 
   def index
@@ -12,6 +12,11 @@ class FeedEntriesController < ApplicationController
   	redirect_to @feed_entry.url 
   end
 
+  def update_feed
+    FeedEntry.update_from_feed
+    redirect_to root_url
+  end
+
   def destroy
   	FeedEntry.find(params[:id]).destroy
   	redirect_to root_url
@@ -21,7 +26,10 @@ class FeedEntriesController < ApplicationController
   	value = params[:type] == "up" ? 1 : -1
   	@feed = FeedEntry.find(params[:id])
   	@feed.add_or_update_evaluation(:votes, value, current_user)
-  	redirect_to :back
+  	respond_to do |format| 
+      format.html { redirect_to :back }
+      format.js
+    end
   end
 
   private

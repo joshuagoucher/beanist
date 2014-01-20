@@ -11,12 +11,14 @@
 			<br />
 			
 			<p class="feed-updown pull-right">
-				<%= item.reputation_for(:votes).to_i %>
-				<%=link_to vote_feed_entry_path(item, type: "up"), method: "post" do %>
+				<span id="vote-<%= item.id %>"> 
+					<%= item.reputation_for(:votes).to_i %>
+				</span>
+				<%=link_to vote_feed_entry_path(item, type: "up"), method: "post", remote: true do %>
 						<span class="glyphicon glyphicon-circle-arrow-up"></span>
 					<% end %>
 					 
-					<%=link_to vote_feed_entry_path(item, type: "down"), method: "post" do %>
+					<%=link_to vote_feed_entry_path(item, type: "down"), method: "post", remote: true do %>
 						<span class="glyphicon glyphicon-circle-arrow-down"></span>
 					<% end %>
 			</p>
@@ -25,4 +27,5 @@
 			
 		</li>
 	<% end %>
+	<%= link_to "update feed", update_feed_path %>
 </ul>

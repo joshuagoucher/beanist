@@ -7,14 +7,18 @@
 				<%= link_to item.title, item.url, target: "_blank" %>
 			</h5>
 			<p class="updown pull-right">
+					<p class="updown pull-right">
+					<span id="vote-<%= item.id %>">
 					<%= item.reputation_for(:votes).to_i %>
-					<%=link_to vote_featured_article_path(item, type: "up"), method: "post" do %>
+					</span>
+					<%=link_to vote_featured_article_path(item, type: "up"), method: "post", remote: true do %>
 						<span class="glyphicon glyphicon-circle-arrow-up"></span>
 					<% end %>
 					 
-					<%=link_to vote_featured_article_path(item, type: "down"), method: "post" do %>
+					<%=link_to vote_featured_article_path(item, type: "down"), method: "post", remote: true do %>
 						<span class="glyphicon glyphicon-circle-arrow-down"></span>
 					<% end %>
+				</p>
 				</p>
 		</div>
 	<% end %>

@@ -30,14 +30,14 @@ class FeaturedArticlesController < ApplicationController
   end
 
   def vote
-    # if !signed_in?
-    #   vote_redirect
-    # else
     value = params[:type] == "up" ? 1 : -1
     @feature = FeaturedArticle.find(params[:id])
     @feature.add_or_update_evaluation(:votes, value, current_user)
-    redirect_to :back
-    # end
+    respond_to do |format| 
+      format.html { redirect_to :back }
+      format.js
+    end
+    
   end
 
   private

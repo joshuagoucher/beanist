@@ -8,7 +8,7 @@
 
 FeaturedArticle.create(
 			img_url: 'http://i.imgur.com/IqTk8uO.jpg',
-			title:   "This is a featured article about something",
+			title:   "This is a featured article about something that i don't like",
 			summary: 'I am a summary about an article, from a really 
 					  website about coffee and shit. Do you think I look pretty? 
 					  I do. But I would say that would I.',
