@@ -12,7 +12,7 @@ FeaturedArticle.create(
 			summary: 'I am a summary about an article, from a really 
 					  website about coffee and shit. Do you think I look pretty? 
 					  I do. But I would say that would I.',
-			url:      'www.sprudge.com',
+			url:      'http://www.sprudge.com',
 			editors_comment: 'Hmmm this article likes itself',
 			pubdate: '6 january 2014',
 			source: 'sprudge.com'
@@ -24,7 +24,7 @@ FeaturedArticle.create(
 			summary: 'I am a summary about an article, from a really 
 					  website about coffee and shit. Do you think I look pretty? 
 					  I do. But I would say that would I.',
-			url:      'www.sprudge.com',
+			url:      'http://www.sprudge.com',
 			editors_comment: 'Hmmm this article likes itself',
 			pubdate: '6 january 2014',
 			source: 'sprudge.com'
@@ -36,7 +36,7 @@ FeaturedArticle.create(
 			summary: 'I am a summary about an article, from a really 
 					  website about coffee and shit. Do you think I look pretty? 
 					  I do. But I would say that would I.',
-			url:      'www.sprudge.com',
+			url:      'http://www.sprudge.com',
 			editors_comment: 'Hmmm this article likes itself',
 			pubdate: '6 january 2014',
 			source: 'sprudge.com'

@@ -1,12 +1,7 @@
 class FeedEntriesController < ApplicationController
-  before_filter :signed_in_user
-  before_filter :admin_user, only: [:index, :new, :create, :destroy, :update_feed]
-
-
-  def index
-  	@feed =  FeedEntry.last(20)
-  end
-
+  before_filter :signed_in_user, except: :show
+  before_filter :admin_user, only: [:destroy, :update_feed]
+  
   def show
   	@feed_entry = FeedEntry.find(params[:id])
   	redirect_to @feed_entry.url 
@@ -21,6 +16,7 @@ class FeedEntriesController < ApplicationController
   	FeedEntry.find(params[:id]).destroy
   	redirect_to root_url
   end
+
 
   def vote
   	value = params[:type] == "up" ? 1 : -1

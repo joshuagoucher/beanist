@@ -3,12 +3,12 @@
 	<% if current_user.admin? %>
 		<strong>Admin User!</strong>
 	<% end %>
-	<strong class="welcome">Welcome, <%= current_user.name %></strong>
+	<strong class="welcome">Hello, <%= current_user.name %></strong>
 	<small class="signout">
 		&#40;<%= link_to "Sign out", signout_path, method: :delete %>&#41;
 	</small>
 <% else %>
 	<strong class="signin">
-		<%= link_to "Sign in or Register", signin_path %>
+		<%= link_to "Sign in / Register", signin_path %>
 	</strong>
 <% end %>

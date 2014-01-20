@@ -1,14 +1,23 @@
-<h1>Sign in</h1>
 
+<div class="container well">
+
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<h2>Sign in</h2>
 <%= form_for(:session, url: sessions_path) do |f| %>
 
-	<%= f.label :email %>
-	<%= f.text_field :email %>
-
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-
-	<%= f.submit "Sign in", class: "btn" %>
+	<div class="input-group">
+		<%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+	</div>
+	<br />
+	<div class="input-group">
+		<%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+	</div>
+	<br />
+	<%= f.submit "Sign in", class: "btn btn-primary" %>
 <% end %>
+</div>
+<div class="pull-right col-lg-6 col-md-6 col-sm-6 col-xs-12">
+	<h1 class="text-center">New user? <br /><%= link_to "Sign up now!", signup_path %></h1>
+</div>
 
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+</div>

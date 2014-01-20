@@ -3,13 +3,14 @@ class FeedEntry < ActiveRecord::Base
 
    has_reputation :votes, source: :user, aggregated_by: :sum
 
+   
 
   def self.update_from_feed
-		feed_url = "http://pipes.yahoo.com/pipes/pipe.run?_id=d9829b4a0198bb87c6d32e0e1a3140db&_render=rss"
+  		feed_url = "http://pipes.yahoo.com/pipes/pipe.run?_id=d9829b4a0198bb87c6d32e0e1a3140db&_render=rss"
 		feed = Feedzirra::Feed.fetch_and_parse(feed_url)
 		add_entries(feed.entries)
   end
- 
+
 
 	private
 

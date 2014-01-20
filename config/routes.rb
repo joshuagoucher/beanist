@@ -9,11 +9,15 @@ Beanist2::Application.routes.draw do
     member { post :vote}
   end
   
+
   match '/signup',  to: 'users#new' 
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', :via => :delete
 
   match '/update_feed', to: 'feed_entries#update_feed'
+
+  match '/:id', to: 'featured_articles#show'
+  match '/f/:id', to: 'feed_entries#show'
 
   root to: 'user_pages#index'
  

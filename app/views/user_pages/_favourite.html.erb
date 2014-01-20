@@ -7,9 +7,9 @@
 				<%= link_to item.title, item.url, target: "_blank" %>
 			</h5>
 			<p class="updown pull-right">
-					<p class="updown pull-right">
-					<span id="vote-<%= item.id %>">
-					<%= item.reputation_for(:votes).to_i %>
+
+					<span id="fav-<%= item.id %>">
+						<%= item.reputation_for(:votes).to_i %>
 					</span>
 					<%=link_to vote_featured_article_path(item, type: "up"), method: "post", remote: true do %>
 						<span class="glyphicon glyphicon-circle-arrow-up"></span>
@@ -18,8 +18,8 @@
 					<%=link_to vote_featured_article_path(item, type: "down"), method: "post", remote: true do %>
 						<span class="glyphicon glyphicon-circle-arrow-down"></span>
 					<% end %>
-				</p>
-				</p>
+		
+			</p>
 		</div>
 	<% end %>
 </div>

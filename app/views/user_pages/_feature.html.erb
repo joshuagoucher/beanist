@@ -28,6 +28,7 @@
 					<span id="vote-<%= item.id %>">
 					<%= item.reputation_for(:votes).to_i %>
 					</span>
+					
 					<%=link_to vote_featured_article_path(item, type: "up"), method: "post", remote: true do %>
 						<span class="glyphicon glyphicon-circle-arrow-up"></span>
 					<% end %>
