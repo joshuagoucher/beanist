@@ -1,13 +1,14 @@
 
 
 	<% @favourites.each do |item| %>
-		<div class="list-group-item col-lg-12
-					col-md-12 col-sm-12 col-xs-12">
-			<h5 class="feed-title h4 text-right">
+		<div class="list-group-item">
+			<div class="row">
+			<h5 class="feed-title text-right
+						col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<%= link_to item.title, item.url, target: "_blank" %>
 			</h5>
-			<p class="updown pull-right">
-
+				<p class="updown text-right
+							col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<span id="fav-<%= item.id %>">
 						<%= item.reputation_for(:votes).to_i %>
 					</span>
@@ -18,7 +19,7 @@
 					<%=link_to vote_featured_article_path(item, type: "down"), method: "post", remote: true do %>
 						<span class="glyphicon glyphicon-circle-arrow-down"></span>
 					<% end %>
-		
-			</p>
+				</p>
+			</div>
 		</div>
 	<% end %>

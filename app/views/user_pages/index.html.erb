@@ -1,10 +1,20 @@
 <div class="container">
 	<% flash.each do |key, value| %>
-			<span class="label label-<%= key %> center-block notice-label">
-				<%= value %>
-			</span>
-			<% end %>
-		</div>
+		<span class="label label-<%= key %> center-block notice-label">
+			<%= value %>
+		</span>
+	<% end %>
+</div>
+
+
+
+		<!-- <p class="visible-xs">XS screen</p>
+		<p class="visible-sm">SM screen</p>
+		<p class="visible-md">MD screen</p>
+		<p class="visible-lg">LG screen</p>
+ -->
+
+
 <div class="column-banner hidden-xs">
 	<div class="container">
 	
@@ -22,26 +32,87 @@
 </div>
 
 
-<div class="container">
-	<div class="row">
+<div class="container hidden-xs">
+	
 
 		<ul class="list-group feed-column 
-				   col-lg-3 col-md-3 col-sm-3 hidden-xs">
+				   col-lg-3 col-md-3 col-sm-3">
 			<%= render 'feed' %>
 		</ul>
+
 		<div class="list-group 
-					col-lg-6 col-md-6 col-sm-6">
+					col-lg-6 col-md-6 col-sm-6 col-xs-12">
 			<%= render 'feature' %>
 		</div>
 		<div class="list-group 
-					col-lg-3 col-md-3 col-sm-3 hidden-xs">
+					col-lg-3 col-md-3 col-sm-3">
 			<%= render 'favourite' %>
 		</div>
 
- 	</div>
+ 	
+</div>
+
+
+<div class="visible-xs">
+
+
+
+	<div class="column-banner">
+		<div class="container">
+			<p class="text-center column-header col-xs-12">
+				Featured
+			</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="list-group col-xs-12">
+				<%= render 'feature' %>
+		</div>
+	</div>
+
+	<div class="column-banner">
+		<div class="container">
+			<p class="text-center column-header col-xs-12">
+				The Latest
+			</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<ul class="list-group col-xs-12">
+				<%= render 'feed' %>
+		</ul>
+	</div>
+
+	<div class="column-banner">
+		<div class="container">
+			<p class="text-center column-header col-xs-12">
+				Highest Rated
+			</p>
+		</div>
+	</div>
+
+	<div class="container">
+		<ul class="list-group col-xs-12">
+				<%= render 'favourite' %>
+		</ul>
+	</div>
+
+
+
+
 
 
 </div>
+
+
+
+
+
+
+
+
 <% if signed_in? && current_user.admin? %>
 <div class="container well">
 	<%= link_to "Update Feed Entries", update_feed_path %> |

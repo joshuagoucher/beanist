@@ -1,28 +1,32 @@
 
 
 	<% @featured.each do |item| %>
-	<div class="list-group-item col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div class="list-group-item">
 		<div class="row">
-			<small class="col-lg-12 editors-comment">
+			<small class="editors-comment
+							col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<%= item.editors_comment %>
 			</small>
 			
-			<img src="<%= item.img_url %>" class="col-lg-7 feature-picture">
+			<img src="<%= item.img_url %>" class="feature-picture
+												  col-lg-7 col-md-7 col-sm-12 col-xs-12">
 
-			<h1 class="h4 col-lg-5 feature-title">
+			<h1 class="h4 feature-title
+						col-lg-5 col-md-5 col-sm-12 col-xs-12">
 				<%= link_to item.title, item, target: "_blank" %>
 			</h1>
-			<p class="col-lg-5 feature-summary">
-				<%= truncate(item.summary, length: 160) %>
+			<p class="feature-summary
+						col-lg-5 col-md-5 col-sm-12 col-xs-12">
+				<%= truncate(item.summary, length: 180) %>
 			</p>
-			<small class="text-muted feature-pubdate col-lg-5 text-right">
+			<small class="text-muted pull-right feature-pubdate text-right
+							col-lg-5 col-md-5 col-sm-12 col-xs-12">
 				<%= item.source %> / <%= item.pubdate %>
 			</small>
 
-			<div class="voter col-lg-5">
+			<div class="voter pull-right
+						col-lg-5 col-md-5 col-sm-12 col-xs-12">
 				
-
-			<!--  -->
 
 				<p class="updown pull-right">
 					<span id="vote-<%= item.id %>">

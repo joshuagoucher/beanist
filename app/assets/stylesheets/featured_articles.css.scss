@@ -71,6 +71,7 @@ $success-color: #5cb85c;
 
 
 .column-banner {
+	width:100%;
 	margin-top: 20px;
 	margin-bottom: 0;
 	height: 30px;
@@ -175,7 +176,7 @@ $success-color: #5cb85c;
 
 .feed-updown {
 	color: $gray-light;
-	display: inline-block;
+	/*display: inline-block;*/
 	
 	a {
 		color: $gray-light;
