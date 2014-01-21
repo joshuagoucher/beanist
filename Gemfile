@@ -31,9 +31,10 @@ gem 'activerecord-reputation-system'
 
 group :production do
   gem 'pg', '0.12.2'
+  gem 'rails_12factor'
 end
 
-  gem 'rails_12factor'
+
 
 
 # To use Jbuilder templates for JSON
