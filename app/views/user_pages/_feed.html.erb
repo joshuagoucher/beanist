@@ -51,7 +51,7 @@
 		<% end %>
 
 		<% if signed_in? && current_user.admin? %>
-			<%= item.hide %>
+			
 			<%= link_to "hide", hide_item_path(item) %>
 		<% end %>
 
