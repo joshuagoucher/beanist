@@ -1,5 +1,5 @@
 class FeaturedArticlesController < ApplicationController
-  before_filter :signed_in_user, except: :show
+ # before_filter :signed_in_user
   before_filter :admin_user, only: [:new, :create, :destroy]
 
 
@@ -15,7 +15,7 @@ class FeaturedArticlesController < ApplicationController
   def create 
   	@article = FeaturedArticle.new(params[:featured_article])
   	if @article.save
-  		redirect_to @article
+  		redirect_to root_url
   	else
   		render 'new'
   	end
@@ -23,10 +23,10 @@ class FeaturedArticlesController < ApplicationController
 
   def destroy 
   	FeaturedArticle.find(params[:id]).destroy
-  	redirect_to featured_articles_path
+  	redirect_to root_url
   end
 
-  def vote
+  def vote  
     value = params[:type] == "up" ? 1 : -1
     @feature = FeaturedArticle.find(params[:id])
     @feature.add_or_update_evaluation(:votes, value, current_user)
@@ -34,19 +34,20 @@ class FeaturedArticlesController < ApplicationController
       format.html { redirect_to :back }
       format.js
     end
-    
   end
 
   private
 
-    def signed_in_user
+   def signed_in_user
       unless signed_in?
         redirect_to root_url
         flash[:warning] = "Sign in or Register to Vote!"
       end
+    
     end
 
     def admin_user 
       redirect_to root_url unless current_user.admin?
     end
+
 end

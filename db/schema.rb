@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140114195601) do
+ActiveRecord::Schema.define(:version => 20140130151525) do
 
   create_table "featured_articles", :force => true do |t|
     t.string   "img_url"
@@ -28,10 +28,11 @@ ActiveRecord::Schema.define(:version => 20140114195601) do
   create_table "feed_entries", :force => true do |t|
     t.string   "title"
     t.string   "url"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.datetime "pubdate"
     t.string   "source"
+    t.boolean  "hide",       :default => false
   end
 
   create_table "rs_evaluations", :force => true do |t|

@@ -1,5 +1,5 @@
 class FeedEntry < ActiveRecord::Base
-  attr_accessible :title, :url, :pubdate, :source
+  attr_accessible :title, :url, :pubdate, :source, :hide
 
    has_reputation :votes, source: :user, aggregated_by: :sum
 
@@ -9,6 +9,10 @@ class FeedEntry < ActiveRecord::Base
   		feed_url = "http://pipes.yahoo.com/pipes/pipe.run?_id=d9829b4a0198bb87c6d32e0e1a3140db&_render=rss"
 		feed = Feedzirra::Feed.fetch_and_parse(feed_url)
 		add_entries(feed.entries)
+  end
+
+  def self.visible_articles
+  	where(:hide => false)
   end
 
 

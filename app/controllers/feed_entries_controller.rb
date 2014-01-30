@@ -1,6 +1,6 @@
 class FeedEntriesController < ApplicationController
   before_filter :signed_in_user, except: :show
-  before_filter :admin_user, only: [:destroy, :update_feed]
+  before_filter :admin_user, only: [:destroy, :update_feed, :hide]
   
   def show
   	@feed_entry = FeedEntry.find(params[:id])
@@ -28,12 +28,18 @@ class FeedEntriesController < ApplicationController
     end
   end
 
+  def hide
+    item = FeedEntry.find(params[:id])
+    item.toggle!(:hide)
+    redirect_to root_url
+  end
+
+
   private
 
   	def signed_in_user
       unless signed_in?
         redirect_to root_url
-        flash[:warning] = "Sign in or Register to Vote!"
       end
     end
 

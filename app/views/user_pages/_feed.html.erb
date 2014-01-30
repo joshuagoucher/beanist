@@ -1,3 +1,5 @@
+<em></em>
+
 	<% @feed.each do |item| %>
 		<li class="list-group-item col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			
@@ -8,7 +10,8 @@
 				<%= time_ago_in_words(item.pubdate) %> ago
 			</small>
 			<br />
-			
+
+		<% if signed_in? %>
 			<p class="feed-updown pull-right">
 				<span id="vote-<%= item.id %>"> 
 					<%= item.reputation_for(:votes).to_i %>
@@ -22,8 +25,38 @@
 						<span class="glyphicon glyphicon-circle-arrow-down"></span>
 					<% end %>
 			</p>
+
+		<% else %>
+
+			<p class="feed-updown pull-right">
+				<span id="vote-<%= item.id %>"> 
+					<%= item.reputation_for(:votes).to_i %>
+				</span>
+				
+				<%=link_to '#' do %>
+						<span class="glyphicon glyphicon-circle-arrow-up"></span>
+					<% end %>
+					 
+					<%=link_to '#' do %>
+						<span class="glyphicon glyphicon-circle-arrow-down"></span>
+					<% end %>
+			</p>
+
+			<script type="text/javascript">
+					$( ".feed-updown" ).click(function() {
+					  $("#vote-notice").html("Please Sign in or Register to rate Articles :)");
+					});
+				</script>
+
+		<% end %>
+
+		<% if signed_in? && current_user.admin? %>
+			<%= item.hide %>
+			<%= link_to "hide", hide_item_path(item) %>
+		<% end %>
+
 			
-			
-			
-		</li>
-	<% end %>
+	
+	
+	</li>
+<% end %>

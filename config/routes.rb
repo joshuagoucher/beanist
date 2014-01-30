@@ -6,7 +6,9 @@ Beanist2::Application.routes.draw do
     member { post :vote }
   end
   resources :feed_entries do
-    member { post :vote}
+    member do 
+     post :vote
+   end
   end
   
 
@@ -15,6 +17,7 @@ Beanist2::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', :via => :delete
 
   match '/update_feed', to: 'feed_entries#update_feed'
+  match '/hide_item/:id', to: 'feed_entries#hide', as: 'hide_item'
 
   match '/:id', to: 'featured_articles#show'
   match '/f/:id', to: 'feed_entries#show'

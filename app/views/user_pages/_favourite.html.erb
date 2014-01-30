@@ -1,4 +1,4 @@
-
+<em></em>
 
 	<% @favourites.each do |item| %>
 		<div class="list-group-item">
@@ -7,6 +7,7 @@
 						col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				<%= link_to item.title, item.url, target: "_blank" %>
 			</h5>
+			<% if signed_in? %>
 				<p class="updown text-right
 							col-lg-12 col-md-12 col-sm-12 col-xs-12">
 					<span id="fav-<%= item.id %>">
@@ -20,6 +21,28 @@
 						<span class="glyphicon glyphicon-circle-arrow-down"></span>
 					<% end %>
 				</p>
+			<% else %>
+				<p class="updown text-right
+							col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<span id="fav-<%= item.id %>">
+						<%= item.reputation_for(:votes).to_i %>
+					</span>
+					<%=link_to '#' do %>
+						<span class="glyphicon glyphicon-circle-arrow-up"></span>
+					<% end %>
+					 
+					<%=link_to '#' do %>
+						<span class="glyphicon glyphicon-circle-arrow-down"></span>
+					<% end %>
+				</p>
+
+				<script type="text/javascript">
+					$( ".updown" ).click(function() {
+					  $("#vote-notice").html("Please Sign in or Register to rate Articles :)");
+					});
+				</script>
+
+			<% end %>
 			</div>
 		</div>
 	<% end %>

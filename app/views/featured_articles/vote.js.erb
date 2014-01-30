@@ -1,2 +1,4 @@
+
 $("#vote-<%= @feature.id %>").html('<%= @feature.reputation_for(:votes).to_i %>');
 $("#fav-<%= @feature.id %>").html('<%= @feature.reputation_for(:votes).to_i %>');
+
