@@ -1,5 +1,5 @@
 class FeaturedArticlesController < ApplicationController
- # before_filter :signed_in_user
+  before_filter :signed_in_user, except: :show
   before_filter :admin_user, only: [:new, :create, :destroy]
 
 
@@ -41,7 +41,6 @@ class FeaturedArticlesController < ApplicationController
    def signed_in_user
       unless signed_in?
         redirect_to root_url
-        flash[:warning] = "Sign in or Register to Vote!"
       end
     
     end
