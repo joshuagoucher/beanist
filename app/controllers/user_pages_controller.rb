@@ -10,4 +10,3 @@ class UserPagesController < ApplicationController
   def contact
   end
 end
-
