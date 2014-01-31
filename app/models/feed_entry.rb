@@ -6,7 +6,7 @@ class FeedEntry < ActiveRecord::Base
    
 
   def self.update_from_feed
-  		feed_url = "http://pipes.yahoo.com/pipes/pipe.run?_id=d9829b4a0198bb87c6d32e0e1a3140db&_render=rss"
+  		feed_url = "http://pipes.yahoo.com/pipes/pipe.run?_id=e8dd4d7d8b5d4a4788d1191f82e93d06&_render=rss"
 		feed = Feedzirra::Feed.fetch_and_parse(feed_url)
 		add_entries(feed.entries)
   end
