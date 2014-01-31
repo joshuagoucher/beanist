@@ -68,10 +68,16 @@ $success-color: #5cb85c;
 }
 
 .footer {
-	/*argin-bottom: 20px;*/
+	
 }
-.mail {
-
+.contact p {
+	margin-bottom: 15px;
+	color: $gray-dark;
+	font-weight: bold;
+	&:hover {
+		color: $gray-light;
+		text-decoration: none;
+	} 
 }
 
 /**/
