@@ -28,16 +28,20 @@
 .box > img {
 	border: $gray-lighter 1px solid;
 	transition: 0.4s;
-	opacity:0.9;
+	opacity:0.8;
 	filter:alpha(opacity=60); /* For IE8 and earlier */
 }
 
-.featurey {
+.featurey a {
 	padding-top: 0;
 	margin-top: 0;
 	font-family: 'Passion One', cursive;
 	color: $gray;
 	transition:0.1s;
+	&:hover {
+		color:$brand-success !important;
+		text-decoration: none;
+	}
 }
 
 .summaryz {
@@ -49,8 +53,10 @@
 .vote-count {
 	font-family: 'Droid Sans', sans-serif;
 	font-size: 10px;
+	font-weight: bolder;
 	text-transform: uppercase;
 	color: $gray-light;
+
 }
 
 .tags {
@@ -88,9 +94,7 @@
 	text-decoration: none;
 }
 
-.article-item:hover .voting {
-	
-}
+
 
 .article-item:hover  .summaryz {
 	color: $gray-dark;
@@ -102,13 +106,11 @@
 	
 }
 
-.article-item:hover  .featurey {
+.article-item:hover > .featurey {
 	color: $gray-darker;
 }
 
-.featurey:hover {
-	color: $brand-success;
-}
+
 
 
 
@@ -123,8 +125,11 @@
 
 .beanisty {
 	font-family: airstreamregular;
-	font-size: 24px;
+	font-size: 26px;
 	color: $gray-dark;
+	letter-spacing: 1px;
+	padding-top: 0;
+	margin-top: 10px;
 }
 
 .tagline {
@@ -137,5 +142,6 @@
 .signin {
 	color: $gray-light;
 	font-family: 'Droid Sans', sans-serif;
+	margin-top: 12px;
 
 }
