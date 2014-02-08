@@ -9,7 +9,7 @@
 
 
 FeaturedArticle.create(
-			img_url: 'http://i.imgur.com/lEQsFsK.jpg',
+			img_url: 'http://i.imgur.com/ZCu8hEN.jpg',
 			title:   "Coffee Documentary “Yarasquin” to Screen in Subjects’ Home Village in Honduras",
 			summary: "In what promises to be an emotional celebration, filmmaker Sarah Gerber plans to screen her short coffee documentary, “The Way Back to Yarasquin,” to the subjects of the film: coffee workers and families in Santa Elena, Honduras.
 					  The film follows Mayra Orellana-Powell of green coffee importer Royal Coffee and Catracha Coffee 
@@ -22,7 +22,7 @@ FeaturedArticle.create(
 	)
 
 FeaturedArticle.create(
-			img_url: 'http://i.imgur.com/D1Tt2ah.png',
+			img_url: 'http://i.imgur.com/Bd6ijxt.jpg',
 			title:   "Has Bean Top Ten Coffees 2013 (Video)",
 			summary: "Every year I do a review of my top ten favourite coffees of the year
 					  Its a lonely thing so I decided to invite Roland (one of the roasters with us at Has Bean) 
@@ -34,7 +34,7 @@ FeaturedArticle.create(
 	)
 
 FeaturedArticle.create(
-			img_url: 'http://i.imgur.com/jFPiU0I.jpg',
+			img_url: 'http://i.imgur.com/2HazJKL.png',
 			title:   "An Introduction To Acidity",
 			summary: "Acidity is an important part of coffee, and weaves its way through the entire supply chain of the
 					  industry from variety to picking, from process to roasting and from brewing to tasting. I want to start 
@@ -49,16 +49,15 @@ FeaturedArticle.create(
 	)
 
 FeaturedArticle.create(
-			img_url: 'http://i.imgur.com/X1SMt6M.jpg',
-			title:   "8 Coffees, 8 Roasters, One Incredible Gift Box From Seoul",
-			summary: "South Korean company Design Coffee have put together a gift box containing coffees from eight 
-					  different speciality coffee roasters out of Seoul. 
-					  The coffees are packaged in handsome amber bottles, and the whole concept is pretty incredible.
-					  The gift box showcases the coffees from Coffee Libre, Coffee Montage, Greenmile Coffee, 
-					  Steamers Coffee Factory, Coffee President, New Wave Coffee Roasters, El Cafe, and Namusairo.",
-			url:      'http://sprudge.com/south-korea-design-coffee-introduces-2014-coffee-collection.html',
-			editors_comment: 'You know its my birthday soon...',
-			pubdate: '23 january 2014',
-			source: 'sprudge.com'
+			img_url: 'http://i.imgur.com/Bd6ijxt.jpg',
+			title:   "Has Bean Top Ten Coffees 2013 (Video)",
+			summary: "Every year I do a review of my top ten favourite coffees of the year
+					  Its a lonely thing so I decided to invite Roland (one of the roasters with us at Has Bean) 
+					  along to review the year with me. I hope you enjoy",
+			url:      'http://www.hasblog.co.uk/has-bean-top-ten-coffees-2013',
+			editors_comment: 'Hello Roland!',
+			pubdate: '1 january 2014',
+			source: 'hasblog.co.uk'
 	)
+
 

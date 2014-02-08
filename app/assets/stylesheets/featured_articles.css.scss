@@ -46,14 +46,27 @@
 	transition:1s;
 }
 
-.info {
+.vote-count {
 	font-family: 'Droid Sans', sans-serif;
 	font-size: 10px;
 	text-transform: uppercase;
+	color: $gray-light;
 }
 
-.updown .voteup .votedown {
-	color: $gray;
+.tags {
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 10px;
+	text-transform: uppercase;
+	color: $gray-light;
+}
+
+.updown  {
+	.voteup {
+		color: $gray;
+	}
+	.votedown {
+		color: $gray;
+	}
 }
 
 .updown .voteup:hover {
@@ -67,8 +80,12 @@
 }
 
 
-.info:hover {
+.tag-link {
+	color: $gray-light;
+}
+.tag-link:hover {
 	color: $brand-info;
+	text-decoration: none;
 }
 
 .article-item:hover .voting {
@@ -107,7 +124,7 @@
 .beanisty {
 	font-family: airstreamregular;
 	font-size: 24px;
-	color: $gray;
+	color: $gray-dark;
 }
 
 .tagline {
@@ -117,6 +134,8 @@
 	letter-spacing: 2px;
 }
 
-body {
-	/*background-color: #f5f5f5;*/
+.signin {
+	color: $gray-light;
+	font-family: 'Droid Sans', sans-serif;
+
 }

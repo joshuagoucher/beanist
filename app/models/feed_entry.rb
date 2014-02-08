@@ -11,10 +11,6 @@ class FeedEntry < ActiveRecord::Base
 		add_entries(feed.entries)
   end
 
-  def self.visible_articles
-  	where(:hide => false)
-  end
-
 
 	private
 

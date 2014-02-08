@@ -9,8 +9,4 @@ class FeaturedArticle < ActiveRecord::Base
   	where(:created_at => 1.week.ago..Time.now)
   end
 
-  def self.todays_articles
-  	where(:created_at => 26.hours.ago..Time.now)
-  end
-
 end

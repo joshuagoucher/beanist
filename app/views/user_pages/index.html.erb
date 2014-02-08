@@ -1,233 +1,108 @@
 
 <div class="container">
-	<div class="row article-row">
+    <h1 class="tagline text-center">The Front Page of Coffee</h1>
+  </div>
 
-<!-- Left -->
+
+
+
+
+<div class="container">
+
+	<!-- FIRST ROW ////////////////////////////////////// -->
+<div class="row article-row">
+
+<% @featured[0..2].each do |item| %>
+
 	<div class="col-lg-4 col-md-4 col-sm-4 article-item">
-		<div class="box"><img src="http://i.imgur.com/ZCu8hEN.jpg" class="img-responsive"></div>
+		<div class="box"><%= image_tag item.img_url %></div>
 		<h3 class="featurey">
-			<%= @featured[0].title %>
+			<%= item.title %>
 		</h3>
 
-		<p class="summaryz"><%= truncate @featured[0].summary, length: 160  %></p>
-		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
+		<p class="summaryz"><%= truncate item.summary, length: 160  %></p>
+		<p class="pull-left vote-count">
+			<%= item.reputation_for(:votes).to_i %> &bull;&nbsp;
+		</p>
+		<p class="pull-left tags">
+			<%= link_to item.source, '#', class: "tag-link" %> &bull; 
+			<%= link_to 'Tag', '#', class: "tag-link" %>
+		</p>
+
 		<p class="updown pull-right">
-			<span id="">
-				<%= @featured[1].reputation_for(:votes).to_i %>
-			</span>
+			<%= render 'dummyvote' %>
 			
-			<%=link_to '#', class: "voteup" do %>
-				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
-			<% end %>
-			 
-			<%=link_to '#', class: "votedown" do %>
-				<span class="glyphicon glyphicon-circle-arrow-down"></span>
-			<% end %>
 		</p>
 	</div>
 
-<!-- Center -->
+<% end %>
 
-	<div class="col-lg-4 col-md-4 col-sm-4 article-item">
-		<div class="box"><img src="http://i.imgur.com/Bd6ijxt.jpg" class="img-responsive"></div>
-		<h3 class="featurey">
-			<%= @featured[1].title %>
-		</h3>
-		<p class="summaryz"><%= truncate @featured[1].summary, length: 160  %></p>
-		<p class="text-muted pull-left info">18 &bull; dailycoffeenews.com &bull; tutorial</p>
-		<p class="updown pull-right">
-			<span id="">
-			<%= @featured[1].reputation_for(:votes).to_i %>
-			</span>
-			
-			<%=link_to '#', class: "voteup" do %>
-				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
-			<% end %>
-			 
-			<%=link_to '#', class: "votedown" do %>
-				<span class="glyphicon glyphicon-circle-arrow-down"></span>
-			<% end %>
-		</p>
-	</div>
-
-<!-- Right -->
-
-	<div class="col-lg-4 col-md-4 col-sm-4 article-item">
-		<div class="box"><img src="http://i.imgur.com/2HazJKL.png" class="img-responsive"></div>
-		<h3 class="featurey">
-			<%= @featured[2].title %>
-		</h3>
-		<p class="summaryz"><%= truncate @featured[2].summary, length: 160  %></p>
-		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
-		<p class="updown pull-right">
-			<span id="">
-			<%= @featured[2].reputation_for(:votes).to_i %>
-			</span>
-			
-			<%=link_to '#', class: "voteup" do %>
-				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
-			<% end %>
-			 
-			<%=link_to '#', class: "votedown" do %>
-				<span class="glyphicon glyphicon-circle-arrow-down"></span>
-			<% end %>
-		</p>
-	</div>
 </div>
+
+
+<!-- SECOND ROW ///////////////////////////////////// -->
 
 <div class="row article-row">
 
-<!-- Left -->
-	
-	<div class="col-lg-4 article-item">
-		<div class="box"><img src="http://i.imgur.com/Bd6ijxt.jpg"></div>
+	<% @featured[3..5].each do |item| %>
+
+	<div class="col-lg-4 col-md-4 col-sm-4 article-item">
+		<div class="box"><%= image_tag item.img_url %></div>
 		<h3 class="featurey">
-			<%= @featured[1].title %>
+			<%= item.title %>
 		</h3>
-		<p class="summaryz"><%= truncate @featured[1].summary, length: 160  %></p>
-		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
+
+		<p class="summaryz"><%= truncate item.summary, length: 160  %></p>
+		<p class="pull-left vote-count">
+			<%= item.reputation_for(:votes).to_i %> &bull;&nbsp;
+		</p>
+		<p class="pull-left tags">
+			<%= link_to item.source, '#', class: "tag-link" %> &bull; 
+			<%= link_to 'Tag', '#', class: "tag-link" %>
+		</p>
+
 		<p class="updown pull-right">
-			<span id="">
-			<%= @featured[1].reputation_for(:votes).to_i %>
-			</span>
+			<%= render 'dummyvote' %>
 			
-			<%=link_to '#', class: "voteup" do %>
-				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
-			<% end %>
-			 
-			<%=link_to '#', class: "votedown" do %>
-				<span class="glyphicon glyphicon-circle-arrow-down"></span>
-			<% end %>
 		</p>
 	</div>
 
-<!-- Center -->
+<% end %>
 
-
-	<div class="col-lg-4 article-item">
-		<div class="box"><img src="http://i.imgur.com/ZCu8hEN.jpg"></div>
-		<h3 class="featurey">
-			<%= @featured[0].title %>
-		</h3>
-		<p class="summaryz"><%= truncate @featured[0].summary, length: 160  %></p>
-		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
-		<p class="updown pull-right">
-			<span id="">
-			<%= @featured[2].reputation_for(:votes).to_i %>
-			</span>
-			
-			<%=link_to '#', class: "voteup" do %>
-				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
-			<% end %>
-			 
-			<%=link_to '#', class: "votedown" do %>
-				<span class="glyphicon glyphicon-circle-arrow-down"></span>
-			<% end %>
-		</p>
-	</div>
-
-<!-- Right -->
-
-	<div class="col-lg-4 article-item">
-		<div class="box"><img src="http://i.imgur.com/2HazJKL.png"></div>
-		<h3 class="featurey">
-			<%= @featured[2].title %>
-		</h3>
-		<p class="summaryz"><%= truncate @featured[2].summary, length: 160  %></p>
-		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
-		<p class="updown pull-right">
-			<span id="">
-			<%= @featured[2].reputation_for(:votes).to_i %>
-			</span>
-			
-			<%=link_to '#', class: "voteup" do %>
-				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
-			<% end %>
-			 
-			<%=link_to '#', class: "votedown" do %>
-				<span class="glyphicon glyphicon-circle-arrow-down"></span>
-			<% end %>
-		</p>
-	</div>
 </div>
+
+<!-- THIRD ROW ////////////////////////////////////////// -->
 
 <div class="row article-row">
 
-<!-- Left -->
-	
-	<div class="col-lg-4 article-item">
-		<div class="box"><img src="http://i.imgur.com/Bd6ijxt.jpg"></div>
+<% @featured[6..8].each do |item| %>
+
+	<div class="col-lg-4 col-md-4 col-sm-4 article-item">
+		<div class="box"><%= image_tag item.img_url %></div>
 		<h3 class="featurey">
-			<%= @featured[1].title %>
+			<%= item.title %>
 		</h3>
-		<p class="summaryz"><%= truncate @featured[1].summary, length: 160  %></p>
-		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
+
+		<p class="summaryz"><%= truncate item.summary, length: 160  %></p>
+		
+		<p class="pull-left vote-count">
+			<%= item.reputation_for(:votes).to_i %> &bull;&nbsp;
+		</p>
+		<p class="pull-left tags">
+			<%= link_to item.source, '#', class: "tag-link" %> &bull; 
+			<%= link_to 'Tag', '#', class: "tag-link" %>
+		</p>
+
 		<p class="updown pull-right">
-			<span id="">
-			<%= @featured[1].reputation_for(:votes).to_i %>
-			</span>
+			<%= render 'dummyvote' %>
 			
-			<%=link_to '#', class: "voteup" do %>
-				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
-			<% end %>
-			 
-			<%=link_to '#', class: "votedown" do %>
-				<span class="glyphicon glyphicon-circle-arrow-down"></span>
-			<% end %>
 		</p>
 	</div>
 
-<!-- Center -->
+<% end %>
 
-
-	<div class="col-lg-4 article-item">
-		<div class="box"><img src="http://i.imgur.com/ZCu8hEN.jpg"></div>
-		<h3 class="featurey">
-			<%= @featured[0].title %>
-		</h3>
-		<p class="summaryz"><%= truncate @featured[0].summary, length: 160  %></p>
-		<p class="text-muted info pull-left">18 &bull; </p>
-		<p class="text-muted info pull-left">sprudge.com &bull; </p>
-		<p class="text-muted info pull-left">tutorial</p>
-		<p class="updown pull-right">
-			<span id="">
-			<%= @featured[2].reputation_for(:votes).to_i %>
-			</span>
-			
-			<%=link_to '#', class: "voteup" do %>
-				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
-			<% end %>
-			 
-			<%=link_to '#', class: "votedown" do %>
-				<span class="glyphicon glyphicon-circle-arrow-down"></span>
-			<% end %>
-		</p>
-	</div>
-
-<!-- Right -->
-
-	<div class="col-lg-4 article-item">
-		<div class="box"><img src="http://i.imgur.com/2HazJKL.png"></div>
-		<h3 class="featurey">
-			<%= @featured[2].title %>
-		</h3>
-		<p class="summaryz"><%= truncate @featured[2].summary, length: 160  %></p>
-		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
-		<p class="updown pull-right">
-			<span id="">
-			<%= @featured[2].reputation_for(:votes).to_i %>
-			</span>
-			
-			<%=link_to '#', class: "voteup" do %>
-				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
-			<% end %>
-			 
-			<%=link_to '#', class: "votedown" do %>
-				<span class="glyphicon glyphicon-circle-arrow-down"></span>
-			<% end %>
-		</p>
-	</div>
 </div>
+
 
 </div>
 
