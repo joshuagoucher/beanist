@@ -1,107 +1,235 @@
 
+<div class="container">
+	<div class="row article-row">
 
+<!-- Left -->
+	<div class="col-lg-4 col-md-4 col-sm-4 article-item">
+		<div class="box"><img src="http://i.imgur.com/ZCu8hEN.jpg" class="img-responsive"></div>
+		<h3 class="featurey">
+			<%= @featured[0].title %>
+		</h3>
 
+		<p class="summaryz"><%= truncate @featured[0].summary, length: 160  %></p>
+		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
+		<p class="updown pull-right">
+			<span id="">
+				<%= @featured[1].reputation_for(:votes).to_i %>
+			</span>
+			
+			<%=link_to '#', class: "voteup" do %>
+				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
+			<% end %>
+			 
+			<%=link_to '#', class: "votedown" do %>
+				<span class="glyphicon glyphicon-circle-arrow-down"></span>
+			<% end %>
+		</p>
+	</div>
 
-		<!-- <p class="visible-xs">XS screen</p>
-		<p class="visible-sm">SM screen</p>
-		<p class="visible-md">MD screen</p>
-		<p class="visible-lg">LG screen</p>
- -->
+<!-- Center -->
 
+	<div class="col-lg-4 col-md-4 col-sm-4 article-item">
+		<div class="box"><img src="http://i.imgur.com/Bd6ijxt.jpg" class="img-responsive"></div>
+		<h3 class="featurey">
+			<%= @featured[1].title %>
+		</h3>
+		<p class="summaryz"><%= truncate @featured[1].summary, length: 160  %></p>
+		<p class="text-muted pull-left info">18 &bull; dailycoffeenews.com &bull; tutorial</p>
+		<p class="updown pull-right">
+			<span id="">
+			<%= @featured[1].reputation_for(:votes).to_i %>
+			</span>
+			
+			<%=link_to '#', class: "voteup" do %>
+				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
+			<% end %>
+			 
+			<%=link_to '#', class: "votedown" do %>
+				<span class="glyphicon glyphicon-circle-arrow-down"></span>
+			<% end %>
+		</p>
+	</div>
 
-<div class="column-banner hidden-xs">
-	<div class="container">
+<!-- Right -->
+
+	<div class="col-lg-4 col-md-4 col-sm-4 article-item">
+		<div class="box"><img src="http://i.imgur.com/2HazJKL.png" class="img-responsive"></div>
+		<h3 class="featurey">
+			<%= @featured[2].title %>
+		</h3>
+		<p class="summaryz"><%= truncate @featured[2].summary, length: 160  %></p>
+		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
+		<p class="updown pull-right">
+			<span id="">
+			<%= @featured[2].reputation_for(:votes).to_i %>
+			</span>
+			
+			<%=link_to '#', class: "voteup" do %>
+				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
+			<% end %>
+			 
+			<%=link_to '#', class: "votedown" do %>
+				<span class="glyphicon glyphicon-circle-arrow-down"></span>
+			<% end %>
+		</p>
+	</div>
+</div>
+
+<div class="row article-row">
+
+<!-- Left -->
 	
+	<div class="col-lg-4 article-item">
+		<div class="box"><img src="http://i.imgur.com/Bd6ijxt.jpg"></div>
+		<h3 class="featurey">
+			<%= @featured[1].title %>
+		</h3>
+		<p class="summaryz"><%= truncate @featured[1].summary, length: 160  %></p>
+		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
+		<p class="updown pull-right">
+			<span id="">
+			<%= @featured[1].reputation_for(:votes).to_i %>
+			</span>
+			
+			<%=link_to '#', class: "voteup" do %>
+				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
+			<% end %>
+			 
+			<%=link_to '#', class: "votedown" do %>
+				<span class="glyphicon glyphicon-circle-arrow-down"></span>
+			<% end %>
+		</p>
+	</div>
 
-		<div class="col-lg-3 col-md-3 col-sm-3">
-			<p class="pull-left column-header">The Latest</p>
-		</div>
-		<div class="col-lg-6 col-md-6 col-sm-6">
-			<p class="text-center column-header">Featured</p>
-		</div>
-		<div class="col-lg-3 col-md-3 col-sm-3">
-			<p class="pull-right column-header">Highest Rated</p>
-		</div>
+<!-- Center -->
+
+
+	<div class="col-lg-4 article-item">
+		<div class="box"><img src="http://i.imgur.com/ZCu8hEN.jpg"></div>
+		<h3 class="featurey">
+			<%= @featured[0].title %>
+		</h3>
+		<p class="summaryz"><%= truncate @featured[0].summary, length: 160  %></p>
+		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
+		<p class="updown pull-right">
+			<span id="">
+			<%= @featured[2].reputation_for(:votes).to_i %>
+			</span>
+			
+			<%=link_to '#', class: "voteup" do %>
+				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
+			<% end %>
+			 
+			<%=link_to '#', class: "votedown" do %>
+				<span class="glyphicon glyphicon-circle-arrow-down"></span>
+			<% end %>
+		</p>
+	</div>
+
+<!-- Right -->
+
+	<div class="col-lg-4 article-item">
+		<div class="box"><img src="http://i.imgur.com/2HazJKL.png"></div>
+		<h3 class="featurey">
+			<%= @featured[2].title %>
+		</h3>
+		<p class="summaryz"><%= truncate @featured[2].summary, length: 160  %></p>
+		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
+		<p class="updown pull-right">
+			<span id="">
+			<%= @featured[2].reputation_for(:votes).to_i %>
+			</span>
+			
+			<%=link_to '#', class: "voteup" do %>
+				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
+			<% end %>
+			 
+			<%=link_to '#', class: "votedown" do %>
+				<span class="glyphicon glyphicon-circle-arrow-down"></span>
+			<% end %>
+		</p>
 	</div>
 </div>
 
+<div class="row article-row">
 
-<div class="container hidden-xs">
+<!-- Left -->
 	
+	<div class="col-lg-4 article-item">
+		<div class="box"><img src="http://i.imgur.com/Bd6ijxt.jpg"></div>
+		<h3 class="featurey">
+			<%= @featured[1].title %>
+		</h3>
+		<p class="summaryz"><%= truncate @featured[1].summary, length: 160  %></p>
+		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
+		<p class="updown pull-right">
+			<span id="">
+			<%= @featured[1].reputation_for(:votes).to_i %>
+			</span>
+			
+			<%=link_to '#', class: "voteup" do %>
+				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
+			<% end %>
+			 
+			<%=link_to '#', class: "votedown" do %>
+				<span class="glyphicon glyphicon-circle-arrow-down"></span>
+			<% end %>
+		</p>
+	</div>
 
-		<ul class="list-group feed-column 
-				   col-lg-3 col-md-3 col-sm-3">
-			<%= render 'feed' %>
-		</ul>
+<!-- Center -->
 
-		<div class="list-group 
-					col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<%= render 'feature' %>
-		</div>
-		<div class="list-group 
-					col-lg-3 col-md-3 col-sm-3">
-			<%= render 'favourite' %>
-		</div>
 
- 	
+	<div class="col-lg-4 article-item">
+		<div class="box"><img src="http://i.imgur.com/ZCu8hEN.jpg"></div>
+		<h3 class="featurey">
+			<%= @featured[0].title %>
+		</h3>
+		<p class="summaryz"><%= truncate @featured[0].summary, length: 160  %></p>
+		<p class="text-muted info pull-left">18 &bull; </p>
+		<p class="text-muted info pull-left">sprudge.com &bull; </p>
+		<p class="text-muted info pull-left">tutorial</p>
+		<p class="updown pull-right">
+			<span id="">
+			<%= @featured[2].reputation_for(:votes).to_i %>
+			</span>
+			
+			<%=link_to '#', class: "voteup" do %>
+				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
+			<% end %>
+			 
+			<%=link_to '#', class: "votedown" do %>
+				<span class="glyphicon glyphicon-circle-arrow-down"></span>
+			<% end %>
+		</p>
+	</div>
+
+<!-- Right -->
+
+	<div class="col-lg-4 article-item">
+		<div class="box"><img src="http://i.imgur.com/2HazJKL.png"></div>
+		<h3 class="featurey">
+			<%= @featured[2].title %>
+		</h3>
+		<p class="summaryz"><%= truncate @featured[2].summary, length: 160  %></p>
+		<p class="text-muted pull-left info">18 &bull; sprudge.com &bull; tutorial</p>
+		<p class="updown pull-right">
+			<span id="">
+			<%= @featured[2].reputation_for(:votes).to_i %>
+			</span>
+			
+			<%=link_to '#', class: "voteup" do %>
+				<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
+			<% end %>
+			 
+			<%=link_to '#', class: "votedown" do %>
+				<span class="glyphicon glyphicon-circle-arrow-down"></span>
+			<% end %>
+		</p>
+	</div>
 </div>
 
-
-<div class="visible-xs">
-
-
-
-	<div class="column-banner">
-		<div class="container">
-			<p class="text-center column-header col-xs-12">
-				Featured
-			</p>
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="list-group col-xs-12">
-				<%= render 'feature' %>
-		</div>
-	</div>
-
-	<div class="column-banner">
-		<div class="container">
-			<p class="text-center column-header col-xs-12">
-				The Latest
-			</p>
-		</div>
-	</div>
-
-	<div class="container">
-		<ul class="list-group col-xs-12">
-				<%= render 'feed' %>
-		</ul>
-	</div>
-
-	<div class="column-banner">
-		<div class="container">
-			<p class="text-center column-header col-xs-12">
-				Highest Rated
-			</p>
-		</div>
-	</div>
-
-	<div class="container">
-		<ul class="list-group col-xs-12">
-				<%= render 'favourite' %>
-		</ul>
-	</div>
-
-
-
-
-
-
 </div>
-
-
-
 
 
 
