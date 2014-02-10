@@ -22,7 +22,7 @@ FeaturedArticle.create(
 	)
 
 FeaturedArticle.create(
-			img_url: ' http://i.imgur.com/2HazJKL.png ',
+			img_url: 'http://i.imgur.com/2HazJKL.png',
 			title:   "Has Bean Top Ten Coffees 2013 (Video)",
 			summary: "Every year I do a review of my top ten favourite coffees of the year
 					  Its a lonely thing so I decided to invite Roland (one of the roasters with us at Has Bean) 
