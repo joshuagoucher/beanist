@@ -47,7 +47,15 @@
   <div class="top-header-xs visible-xs">
     <div class="container">
       <div class="row">
-        <p class="pull-right signin-xs">Sign in &bull; Register</p>
+      <% if signed_in? %>
+        <p class="pull-right signin-xs">
+          Hello, <%= current_user.name %> &bull; 
+          <%= link_to 'Sign out', signout_path, method: :delete %>
+        </p>
+        <% else %>
+        <p class="pull-right signin-xs"><%= link_to 'Sign in', signin_path %> &bull; 
+          <%= link_to 'Register', signup_path %>
+        <% end %>
       </div>
       <h1 class="beanist-xs text-center">Beanist</h1>
     </div>

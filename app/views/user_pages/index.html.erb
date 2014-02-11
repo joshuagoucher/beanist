@@ -21,17 +21,29 @@
 	</h3>
 
 	<p class="summaryz"><%= truncate item.summary, length: 160  %></p>
-	<p class="pull-left vote-count">
-		<%= item.reputation_for(:votes).to_i %> &bull;&nbsp;
+	<p class="pull-left vote-count" id="vote-<%= item.id %>">
+		<%= item.reputation_for(:votes).to_i %> 
 	</p>
 	<p class="pull-left tags">
+		&nbsp;&bull;
 		<%= link_to item.source, '#', class: "tag-link" %> &bull; 
 		<%= link_to 'Tag', '#', class: "tag-link" %>
 	</p>
 
 	<p class="updown pull-right">
-		<%= render 'dummyvote' %>
+		<% if signed_in? %>
 		
+		<%=link_to vote_featured_article_path(item, type: "up"), method: "post", remote: true, class: "voteup" do %>
+			<span class="glyphicon glyphicon-circle-arrow-up"></span>
+		<% end %>
+		 
+		<%=link_to vote_featured_article_path(item, type: "down"), method: "post", remote: true, class: "votedown" do %>
+			<span class="glyphicon glyphicon-circle-arrow-down"></span>
+		<% end %>
+
+		<% else %>
+		<%= render 'dummyvote' %>
+		<% end %>
 	</p>
 </div>
 
@@ -53,17 +65,29 @@
 	</h3>
 
 	<p class="summaryz"><%= truncate item.summary, length: 160  %></p>
-	<p class="pull-left vote-count">
-		<%= item.reputation_for(:votes).to_i %> &bull;&nbsp;
+	<p class="pull-left vote-count" id="vote-<%= item.id %>">
+		<%= item.reputation_for(:votes).to_i %> 
 	</p>
 	<p class="pull-left tags">
+		&nbsp;&bull;
 		<%= link_to item.source, '#', class: "tag-link" %> &bull; 
 		<%= link_to 'Tag', '#', class: "tag-link" %>
 	</p>
 
 	<p class="updown pull-right">
-		<%= render 'dummyvote' %>
+		<% if signed_in? %>
 		
+		<%=link_to vote_featured_article_path(item, type: "up"), method: "post", remote: true, class: "voteup" do %>
+			<span class="glyphicon glyphicon-circle-arrow-up"></span>
+		<% end %>
+		 
+		<%=link_to vote_featured_article_path(item, type: "down"), method: "post", remote: true, class: "votedown" do %>
+			<span class="glyphicon glyphicon-circle-arrow-down"></span>
+		<% end %>
+
+		<% else %>
+		<%= render 'dummyvote' %>
+		<% end %>
 	</p>
 </div>
 
@@ -84,17 +108,29 @@
 	</h3>
 
 	<p class="summaryz"><%= truncate item.summary, length: 160  %></p>
-	<p class="pull-left vote-count">
-		<%= item.reputation_for(:votes).to_i %> &bull;&nbsp;
+	<p class="pull-left vote-count" id="vote-<%= item.id %>">
+		<%= item.reputation_for(:votes).to_i %> 
 	</p>
 	<p class="pull-left tags">
+		&nbsp;&bull;
 		<%= link_to item.source, '#', class: "tag-link" %> &bull; 
 		<%= link_to 'Tag', '#', class: "tag-link" %>
 	</p>
 
 	<p class="updown pull-right">
-		<%= render 'dummyvote' %>
+		<% if signed_in? %>
 		
+		<%=link_to vote_featured_article_path(item, type: "up"), method: "post", remote: true, class: "voteup" do %>
+			<span class="glyphicon glyphicon-circle-arrow-up"></span>
+		<% end %>
+		 
+		<%=link_to vote_featured_article_path(item, type: "down"), method: "post", remote: true, class: "votedown" do %>
+			<span class="glyphicon glyphicon-circle-arrow-down"></span>
+		<% end %>
+
+		<% else %>
+		<%= render 'dummyvote' %>
+		<% end %>
 	</p>
 </div>
 

@@ -52,16 +52,16 @@
 
 .vote-count {
 	font-family: 'Droid Sans', sans-serif;
-	font-size: 10px;
+	font-size: 12px;
 	font-weight: bolder;
 	text-transform: uppercase;
-	color: $gray-light;
+	color: $gray;
 
 }
 
 .tags {
 	font-family: 'Droid Sans', sans-serif;
-	font-size: 10px;
+	font-size: 11px;
 	text-transform: uppercase;
 	color: $gray-light;
 }
@@ -109,6 +109,7 @@
 .article-item:hover .featurey a {
 	color: $gray-darker;
 }
+
 
 
 
@@ -171,7 +172,7 @@
 	margin-top: 0;
 }
 
-.signin-xs {
+.signin-xs a{
 	font-family: 'Droid Sans', sans-serif;
 	color: $gray-light;
 	margin-bottom: 0;
