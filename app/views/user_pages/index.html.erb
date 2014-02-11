@@ -49,7 +49,7 @@
 	<div class="col-lg-4 col-md-4 col-sm-4 article-item">
 	<div class="box"><%= image_tag item.img_url, class: "img-responsive" %></div>
 	<h3 class="featurey">
-		<%= link_to item.title, item.url, target: "_blank" %>
+		<%= link_to item.title, item, target: "_blank" %>
 	</h3>
 
 	<p class="summaryz"><%= truncate item.summary, length: 160  %></p>
@@ -80,7 +80,7 @@
 	<div class="col-lg-4 col-md-4 col-sm-4 article-item">
 	<div class="box"><%= image_tag item.img_url, class: "img-responsive" %></div>
 	<h3 class="featurey">
-		<%= link_to item.title, item.url, target: "_blank" %>
+		<%= link_to item.title, item, target: "_blank" %>
 	</h3>
 
 	<p class="summaryz"><%= truncate item.summary, length: 160  %></p>

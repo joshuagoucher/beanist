@@ -138,10 +138,14 @@
 	letter-spacing: 2px;
 }
 
-.signin {
+.signin a {
 	color: $gray-light;
 	font-family: 'Droid Sans', sans-serif;
 	margin-top: 12px;
+	&:hover {
+		color:$gray;
+		text-decoration: none;
+	}
 
 }
 

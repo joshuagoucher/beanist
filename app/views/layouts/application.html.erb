@@ -25,10 +25,24 @@
     <div class="container">
       <div class="col-lg-12">
         <h1 class="beanisty pull-left">Beanist</h1>
-        <p class="pull-right signin">Sign in &bull; Register</p>
+        <% if signed_in? %>
+        <p class="pull-right signin">
+          Hello, <%= current_user.name %> &bull; 
+          <%= link_to 'Sign out', signout_path, method: :delete %>
+        </p>
+        <% else %>
+        <p class="pull-right signin"><%= link_to 'Sign in', signin_path %> &bull; 
+          <%= link_to 'Register', signup_path %>
+        <% end %>
+        </p>
       </div>
     </div> 
   </div>
+
+
+
+
+
 
   <div class="top-header-xs visible-xs">
     <div class="container">
