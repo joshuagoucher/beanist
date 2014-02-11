@@ -13,6 +13,18 @@
 
 /* DEV */
 
+.bg-info {
+	background-color: $brand-primary;
+	margin-bottom: 30px;
+
+}
+
+#vote-notice {
+	color: $gray-lighter;
+	font-weight: bold;
+	font-family: 'Droid Sans', sans-serif;
+
+}
 .article-row {
 	margin-bottom: 80px;
 }
@@ -134,7 +146,6 @@
 
 .tagline {
 	font-family: headline_onehplhs;
-	margin-bottom: 50px;
 	font-size: 28px;
 	letter-spacing: 2px;
 }
