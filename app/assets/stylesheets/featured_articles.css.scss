@@ -150,15 +150,20 @@
 	letter-spacing: 2px;
 }
 
-.signin a {
+.signin {
 	color: $gray-light;
 	font-family: 'Droid Sans', sans-serif;
 	margin-top: 12px;
+
+	a {
+	color: $gray-light;
+	font-family: 'Droid Sans', sans-serif;
 	&:hover {
 		color:$gray;
 		text-decoration: none;
 	}
 
+}
 }
 
 

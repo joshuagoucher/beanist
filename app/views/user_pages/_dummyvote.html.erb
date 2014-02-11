@@ -1,13 +1,13 @@
 <%=link_to '#', class: "voteup" do %>
-	<span class="glyphicon glyphicon-circle-arrow-up" id="glyph"></span>
+	<span class="glyphicon glyphicon-circle-arrow-up glyph"></span>
 <% end %>
  
 <%=link_to '#', class: "votedown" do %>
-	<span class="glyphicon glyphicon-circle-arrow-down"></span>
+	<span class="glyphicon glyphicon-circle-arrow-down glyph"></span>
 <% end %>
 
 <script type="text/javascript">
-					$( ".updown" ).click(function() {
+					$( ".glyph" ).click(function() {
 					  $("#vote-notice").html("Please Sign in or Register to Rate Articles");
 					});
 </script>
