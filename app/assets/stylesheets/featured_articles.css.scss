@@ -13,16 +13,13 @@
 
 /* DEV */
 
-.bg-info {
-	background-color: $brand-primary;
-	margin-bottom: 30px;
 
-}
 
 #vote-notice {
-	color: $gray-lighter;
+	color: $brand-primary;
 	font-weight: bold;
 	font-family: 'Droid Sans', sans-serif;
+	margin-bottom: 20px;
 
 }
 .article-row {
@@ -135,13 +132,16 @@
 	background-color: $gray-lighter;
 }
 
-.beanisty {
+.beanisty a {
 	font-family: airstreamregular;
 	font-size: 26px;
 	color: $gray-dark;
 	letter-spacing: 1px;
 	padding-top: 0;
 	margin-top: 10px;
+	&:hover {
+		text-decoration:none;
+	}
 }
 
 .tagline {
@@ -180,7 +180,7 @@
 	background-color: $gray-dark;
 }
 
-.beanist-xs {
+.beanist-xs a {
 	color: $gray-lighter;
 	font-family: airstreamregular;
 	letter-spacing: 1px;
@@ -188,12 +188,17 @@
 	margin-top: 0;
 }
 
-.signin-xs a{
+.signin-xs {
+	font-family: 'Droid Sans', sans-serif;
+	color: $gray-light;
+	margin-right: 5px;
+	a {
 	font-family: 'Droid Sans', sans-serif;
 	color: $gray-light;
 	margin-bottom: 0;
 	padding-bottom: 0;
 
+}
 }
 
 
@@ -217,7 +222,7 @@
 
 .img-xs {
 	width: 100%;
-	margin-top: 20px;
+	margin-top: 30px;
 }
 
 .title-xs {
@@ -270,22 +275,22 @@
 
 .updown-xs  {
 	.voteup {
-		color: $gray;
+		color: $brand-success;
 		font-size: 18px;
 	}
 	.votedown {
-		color: $gray;
+		color: $brand-danger;
 		font-size: 18px;
 	}
 }
 
 .updown-xs .voteup:hover {
-	color: $brand-success;
+	color: $gray-dark;
 	text-decoration: none;
 }
 
 .updown-xs .votedown:hover {
-	color: $brand-danger;
+	color: $gray-dark;
 	text-decoration: none;
 }
 
