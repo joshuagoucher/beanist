@@ -3,6 +3,19 @@
 	<h1 class="tagline text-center"><%= params[:tag] %></h1>
 </div>
 
+
+<div class="tagline-bar-xs visible-xs">
+	<div class="container">
+		<h2 class="tagline-xs text-center"><%= params[:tag] %></h2>
+	</div>
+</div>
+
+<div class="container">
+	<p class="text-center" id="vote-notice"></p>
+</div>
+
+
+<div class="hidden-xs">
 <div class="container">
 <div class="article-row index-list">
 	<% @article.each do |item| %>
@@ -37,7 +50,7 @@
 			<% end %>
 
 			<% else %>
-			<%= render 'dummyvote' %>
+			<%= render 'user_pages/dummyvote' %>
 			<% end %>
 		</p>
 	</div>
@@ -45,4 +58,66 @@
 	<% end %>
 </div>
 </div>
+</div>
+
+
+
+<div class="visible-xs">
+	
+
+	<div class="article-list">
+
+		<% @article.each do |item| %>
+			<div class="<%= cycle('list-odd', 'list-even') %>">
+				<div class="container">
+					<div class="article-item-xs col-xs-12">
+						
+							<%= image_tag item.img_url, class: "img-xs" %>
+						
+						<h1 class="title-xs">
+							<%= link_to item.title, item %>
+						</h1>
+						<p class="summary-xs">
+							<%= truncate item.summary, length: 260 %>
+						</p>
+						
+ 						<p class="pull-left vote-count-xs" id="vote-<%= item.id %>-xs">
+ 							<%= item.reputation_for(:votes).to_i %> 
+ 						</p>
+ 						<p class="pull-left tags-xs">
+ 							&nbsp;&bull;
+ 							<%= link_to item.source, tag_path(item.tag_list.first), class: "tag-link-xs" %> &bull; 
+							<%= link_to item.tag_list[1], tag_path(item.tag_list[1]), class: "tag-link-xs" %>
+						</p>
+
+						<p class="updown-xs pull-right">
+							<% if signed_in? %>
+		
+							<%=link_to vote_featured_article_path(item, type: "up"), method: "post", remote: true, class: "voteup" do %>
+								<span class="glyphicon glyphicon-circle-arrow-up"></span>
+							<% end %>
+							 
+							<%=link_to vote_featured_article_path(item, type: "down"), method: "post", remote: true, class: "votedown" do %>
+								<span class="glyphicon glyphicon-circle-arrow-down"></span>
+							<% end %>
+
+							<% else %>
+							<%= render 'user_pages/dummyvote' %>
+							<% end %>
+
+							
+						</p>
+
+					</div>
+				</div>
+			</div>
+
+		<% end %>
+
+	</div>
+
+
+
+</div>
+
 

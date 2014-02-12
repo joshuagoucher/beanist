@@ -85,8 +85,7 @@
 	</p>
 	<p class="pull-left tags">
 		&nbsp;&bull;
-		<%= link_to item.source, tag_path(item.tag_list.first) , class: "tag-link" %> 
-		&bull; 
+		<%= link_to item.source, tag_path(item.tag_list.first) , class: "tag-link" %> &bull; 
 		<%= link_to item.tag_list[1], tag_path(item.tag_list[1]), class: "tag-link" %>
 	</p>
 
@@ -192,14 +191,14 @@
 						<p class="summary-xs">
 							<%= truncate item.summary, length: 260 %>
 						</p>
-
-						<p class="pull-left vote-count-xs" id="vote-<%= item.id %>-xs">
-							<%= item.reputation_for(:votes).to_i %> 
-						</p>
-						<p class="pull-left tags-xs">
-							&nbsp;&bull;
-							<%= link_to item.source, '#', class: "tag-link-xs" %> &bull; 
-							<%= link_to 'Tag', '#', class: "tag-link-xs" %>
+						
+ 						<p class="pull-left vote-count-xs" id="vote-<%= item.id %>-xs">
+ 							<%= item.reputation_for(:votes).to_i %> 
+ 						</p>
+ 						<p class="pull-left tags-xs">
+ 							&nbsp;&bull;
+ 							<%= link_to item.source, tag_path(item.tag_list.first), class: "tag-link-xs" %> &bull; 
+							<%= link_to item.tag_list[1], tag_path(item.tag_list[1]), class: "tag-link-xs" %>
 						</p>
 
 						<p class="updown-xs pull-right">
