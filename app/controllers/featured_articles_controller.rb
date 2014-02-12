@@ -1,12 +1,12 @@
 class FeaturedArticlesController < ApplicationController
-  before_filter :signed_in_user, except: :show
+  before_filter :signed_in_user, except: [:show, :index]
   before_filter :admin_user, only: [:new, :create, :destroy]
 
   def index
     if params[:tag]
       @article = FeaturedArticle.tagged_with(params[:tag])
     else
-      @article = FeaturedArticle.all
+      redirect_to root_url
     end
   end
 

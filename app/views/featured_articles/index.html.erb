@@ -1,11 +1,48 @@
 
+<div class="container hidden-xs">
+	<h1 class="tagline text-center"><%= params[:tag] %></h1>
+</div>
 
-<div class="list-group">
+<div class="container">
+<div class="article-row index-list">
 	<% @article.each do |item| %>
-	<div class="list-group-item">
-		<p><%= item.title %></p>
-		<p><%= item.summary %></p>
+	<div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-2 article-item article-item-index">
+	<div class="box col-lg-5 col-sm-12 hidden-md"><%= image_tag item.img_url, class: "img-responsive" %></div>
+	<div class="box box-index col-md-5 hidden-lg hidden-sm"><%= image_tag item.img_url, class: "img-responsive" %></div>
+	<h3 class="featurey col-lg-7 col-md-7 col-sm-10">
+		<%= link_to item.title, item, target: "_blank" %>
+	</h3>
+
+	<p class="summaryz col-lg-7 col-md-7 col-sm-10"><%= truncate item.summary, length: 160  %></p>
+	<div class="col-lg-7 col-md-6 col-sm-10">
+		<p class="pull-left vote-count" id="vote-<%= item.id %>">
+			<%= item.reputation_for(:votes).to_i %> 
+		</p>
+		<p class="pull-left tags">
+			&nbsp;&bull;
+			<%= link_to item.source, tag_path(item.tag_list.first) , class: "tag-link" %> &bull; 
+			<%= link_to item.tag_list[1], tag_path(item.tag_list[1]), class: "tag-link" %>
+		</p>
+
+		<p class="updown pull-right">
+			<em id="vote-notice-<%= item.id %>"></em>
+			<% if signed_in? %>
+			
+			<%=link_to vote_featured_article_path(item, type: "up"), method: "post", remote: true, class: "voteup" do %>
+				<span class="glyphicon glyphicon-circle-arrow-up"></span>
+			<% end %>
+			 
+			<%=link_to vote_featured_article_path(item, type: "down"), method: "post", remote: true, class: "votedown" do %>
+				<span class="glyphicon glyphicon-circle-arrow-down"></span>
+			<% end %>
+
+			<% else %>
+			<%= render 'dummyvote' %>
+			<% end %>
+		</p>
 	</div>
+</div>
 	<% end %>
+</div>
 </div>
 
