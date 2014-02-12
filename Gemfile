@@ -36,6 +36,9 @@ group :production do
   gem 'rails_12factor'
 end
 
+gem 'acts-as-taggable-on', '2.4.1'
+
+
 
 
 

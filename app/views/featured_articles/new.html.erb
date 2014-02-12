@@ -24,6 +24,11 @@
 			</div>
 			<br />
 			<div class="input-group">
+				<%= f.label :tag_list, "Tags (separated by commas)" %><br />
+  				<%= f.text_field :tag_list %>
+  			</div>
+			<br />
+			<div class="input-group">
 				<%= f.text_field :pubdate, placeholder: "Pub Date", class: "form-control" %>
 			</div>
 			<br />

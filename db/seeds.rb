@@ -18,7 +18,8 @@ FeaturedArticle.create(
 			url:      'http://dailycoffeenews.com/2014/01/22/coffee-documentary-yarasquin-to-screen-in-subjects-home-village-in-honduras/',
 			editors_comment: 'Cinema for the caffeine inclined',
 			pubdate: '22 january 2014',
-			source: 'dailycoffeenews.com'
+			source: 'dailycoffeenews.com',
+			tag_list: 'dailycoffeenews, news, coffee movie'
 	)
 
 FeaturedArticle.create(
@@ -30,7 +31,8 @@ FeaturedArticle.create(
 			url:      'http://www.hasblog.co.uk/has-bean-top-ten-coffees-2013',
 			editors_comment: 'Hello Roland!',
 			pubdate: '1 january 2014',
-			source: 'hasblog.co.uk'
+			source: 'hasblog.co.uk',
+			tag_list: 'hasblog, video, coffee reviews, steve leighton'
 	)
 
 FeaturedArticle.create(
@@ -45,7 +47,8 @@ FeaturedArticle.create(
 			url:      'http://www.jimseven.com/2014/01/20/introduction-acidity/',
 			editors_comment: 'When good flavours become good friends',
 			pubdate: '20 january 2014',
-			source: 'jimseven.com'
+			source: 'jimseven.com',
+			tag_list: 'jimseven, education, james hoffman, acidity'
 	)
 
 FeaturedArticle.create(
@@ -57,7 +60,8 @@ FeaturedArticle.create(
 			url:      'http://www.hasblog.co.uk/has-bean-top-ten-coffees-2013',
 			editors_comment: 'Hello Roland!',
 			pubdate: '1 january 2014',
-			source: 'hasblog.co.uk'
+			source: 'hasblog.co.uk',
+			tag_list: 'hasblog, video, coffee reviews, steve leighton'
 	)
 
 FeaturedArticle.create(
@@ -72,7 +76,8 @@ FeaturedArticle.create(
 			url:      'http://www.jimseven.com/2014/01/20/introduction-acidity/',
 			editors_comment: 'When good flavours become good friends',
 			pubdate: '20 january 2014',
-			source: 'jimseven.com'
+			source: 'jimseven.com',
+			tag_list: 'jimseven, education, james hoffman, acidity'
 	)
 
 
@@ -85,7 +90,8 @@ FeaturedArticle.create(
 			url:      'http://www.hasblog.co.uk/has-bean-top-ten-coffees-2013',
 			editors_comment: 'Hello Roland!',
 			pubdate: '1 january 2014',
-			source: 'hasblog.co.uk'
+			source: 'hasblog.co.uk',
+			tag_list: 'hasblog, video, coffee reviews, steve leighton'
 	)
 
 FeaturedArticle.create(
@@ -98,7 +104,8 @@ FeaturedArticle.create(
 			url:      'http://dailycoffeenews.com/2014/01/22/coffee-documentary-yarasquin-to-screen-in-subjects-home-village-in-honduras/',
 			editors_comment: 'Cinema for the caffeine inclined',
 			pubdate: '22 january 2014',
-			source: 'dailycoffeenews.com'
+			source: 'dailycoffeenews.com',
+			tag_list: 'dailycoffeenews, news, coffee movie'
 	)
 
 FeaturedArticle.create(
@@ -113,7 +120,8 @@ FeaturedArticle.create(
 			url:      'http://www.jimseven.com/2014/01/20/introduction-acidity/',
 			editors_comment: 'When good flavours become good friends',
 			pubdate: '20 january 2014',
-			source: 'jimseven.com'
+			source: 'jimseven.com',
+			tag_list: 'jimseven, education, james hoffman, acidity'
 	)
 
 FeaturedArticle.create(
@@ -125,7 +133,8 @@ FeaturedArticle.create(
 			url:      'http://www.hasblog.co.uk/has-bean-top-ten-coffees-2013',
 			editors_comment: 'Hello Roland!',
 			pubdate: '1 january 2014',
-			source: 'hasblog.co.uk'
+			source: 'hasblog.co.uk',
+			tag_list: 'hasblog, video, coffee reviews, steve leighton'
 	)
 
 FeaturedArticle.create(
@@ -138,5 +147,6 @@ FeaturedArticle.create(
 			url:      'http://dailycoffeenews.com/2014/01/22/coffee-documentary-yarasquin-to-screen-in-subjects-home-village-in-honduras/',
 			editors_comment: 'Cinema for the caffeine inclined',
 			pubdate: '22 january 2014',
-			source: 'dailycoffeenews.com'
+			source: 'dailycoffeenews.com',
+			tag_list: 'dailycoffeenews, news, coffee movie'
 	)

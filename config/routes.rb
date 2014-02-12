@@ -1,5 +1,7 @@
 Beanist2::Application.routes.draw do
 
+  get 'tags/:tag', to: 'featured_articles#index', as: :tag
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :featured_articles do 

@@ -39,8 +39,8 @@
 	</p>
 	<p class="pull-left tags">
 		&nbsp;&bull;
-		<%= link_to item.source, '#', class: "tag-link" %> &bull; 
-		<%= link_to 'Tag', '#', class: "tag-link" %>
+		<%= link_to item.source, tag_path(item.tag_list.first) , class: "tag-link" %> &bull; 
+		<%= link_to item.tag_list[1], tag_path(item.tag_list[1]), class: "tag-link" %>
 	</p>
 
 	<p class="updown pull-right">
@@ -85,8 +85,9 @@
 	</p>
 	<p class="pull-left tags">
 		&nbsp;&bull;
-		<%= link_to item.source, '#', class: "tag-link" %> &bull; 
-		<%= link_to 'Tag', '#', class: "tag-link" %>
+		<%= link_to item.source, tag_path(item.tag_list.first) , class: "tag-link" %> 
+		&bull; 
+		<%= link_to item.tag_list[1], tag_path(item.tag_list[1]), class: "tag-link" %>
 	</p>
 
 	<p class="updown pull-right">
@@ -128,8 +129,8 @@
 	</p>
 	<p class="pull-left tags">
 		&nbsp;&bull;
-		<%= link_to item.source, '#', class: "tag-link" %> &bull; 
-		<%= link_to 'Tag', '#', class: "tag-link" %>
+		<%= link_to item.source, tag_path(item.tag_list.first) , class: "tag-link" %> &bull; 
+		<%= link_to item.tag_list[1], tag_path(item.tag_list[1]), class: "tag-link" %>
 	</p>
 
 	<p class="updown pull-right">
