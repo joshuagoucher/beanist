@@ -7,22 +7,13 @@ Beanist2::Application.routes.draw do
   resources :featured_articles do 
     member { post :vote }
   end
-  resources :feed_entries do
-    member do 
-     post :vote
-   end
-  end
   
 
   match '/signup',  to: 'users#new' 
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', :via => :delete
 
-  match '/update_feed', to: 'feed_entries#update_feed'
-  match '/hide_item/:id', to: 'feed_entries#hide', as: 'hide_item'
-
   match '/:id', to: 'featured_articles#show'
-  match '/f/:id', to: 'feed_entries#show'
 
   root to: 'user_pages#index'
  
