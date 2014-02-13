@@ -12,5 +12,9 @@ class FeaturedArticle < ActiveRecord::Base
   	where(:created_at => 1.week.ago..Time.now)
   end
 
+  def self.today
+  	where(:created_at => 28.hours.ago..Time.now)
+  end
+
 
 end

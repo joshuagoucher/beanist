@@ -59,6 +59,11 @@
 		<%= render 'dummyvote' %>
 		<% end %>
 	</p>
+	<br />
+	<% if signed_in? && current_user.admin? %>
+	<p><%= link_to "delete", item, method: :delete,
+                                  data: { confirm: "Are you sure?" } %></p>
+	   <% end %>
 </div>
 
 
@@ -104,6 +109,11 @@
 		<%= render 'dummyvote' %>
 		<% end %>
 	</p>
+	<br />
+	<% if signed_in? && current_user.admin? %>
+	<p><%= link_to "delete", item, method: :delete,
+                                  data: { confirm: "Are you sure?" } %></p>
+	  <% end %>
 </div>
 
 <% end %>
@@ -147,6 +157,11 @@
 		<%= render 'dummyvote' %>
 		<% end %>
 	</p>
+	<br />
+	<% if signed_in? && current_user.admin? %>
+	<p><%= link_to "delete", item, method: :delete,
+                                  data: { confirm: "Are you sure?" } %></p>
+     <% end %>
 </div>
 
 <% end %>
@@ -207,6 +222,10 @@
 
 							
 						</p>
+						<% if signed_in? && current_user.admin? %>
+							<p><%= link_to "delete", item, method: :delete,
+                                  data: { confirm: "Are you sure?" } %></p>
+                        <% end %>
 
 					</div>
 				</div>
@@ -219,3 +238,30 @@
 
 
 </div>
+
+<% if signed_in? && current_user.admin? %>
+	<div class="container">
+		<div class="well col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<p><%= link_to "New Article", new_featured_article_path %></p>
+			<p>
+				<a href="http://pipes.yahoo.com/pipes/pipe.info?_id=e8dd4d7d8b5d4a4788d1191f82e93d06" target="_blank">
+				Article sources
+				</a>
+			</p>
+			<p><%= link_to "All users", users_path %></p>
+			<p>Todays favourites</p>
+			<ol>
+			<% @daily_favs.each do |item| %>
+				<li><%= link_to item.title, item %> &bull; <%= item.reputation_for(:votes).to_i %> </li>
+			<% end %>
+			</ol>
+
+			<p>Last Week's Favourites</p>
+			<ol>
+			<% @week_favs.each do |item| %>
+				<li><%= link_to item.title, item %> &bull; <%= item.reputation_for(:votes).to_i %> </li>
+			<% end %>
+			</ol>
+		</div>
+	</div>
+<% end %>

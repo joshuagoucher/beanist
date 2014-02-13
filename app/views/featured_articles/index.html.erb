@@ -104,7 +104,10 @@
 							<% else %>
 							<%= render 'user_pages/dummyvote' %>
 							<% end %>
-
+							<% if signed_in? && current_user.admin? %>
+							<p><%= link_to "delete", item, method: :delete,
+                                  data: { confirm: "Are you sure?" } %></p>
+                             <% end %>
 							
 						</p>
 

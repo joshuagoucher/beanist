@@ -6,7 +6,8 @@ class FeaturedArticlesController < ApplicationController
     if params[:tag]
       @article = FeaturedArticle.tagged_with(params[:tag])
     else
-      redirect_to root_url
+      redirect_to root_url unless signed_in? && current_user.admin?
+      @article = FeaturedArticle.all.reverse
     end
   end
 
