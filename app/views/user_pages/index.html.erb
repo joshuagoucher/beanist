@@ -262,6 +262,12 @@
 				<li><%= link_to item.title, item %> &bull; <%= item.reputation_for(:votes).to_i %> </li>
 			<% end %>
 			</ol>
+			<p>Last week's email subscribers</p>
+			<ul>
+				<% @recent_users.each do |user| %>
+				<li><%= user.name %> &bull; <%= user.email %></li>
+				<% end %>
+			</ul>
 		</div>
 	</div>
 <% end %>

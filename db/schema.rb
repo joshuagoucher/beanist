@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140213111650) do
+ActiveRecord::Schema.define(:version => 20140218124712) do
 
   create_table "featured_articles", :force => true do |t|
     t.string   "img_url"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20140213111650) do
     t.datetime "updated_at",                         :null => false
     t.string   "remember_token"
     t.boolean  "admin",           :default => false
+    t.boolean  "subscribe"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

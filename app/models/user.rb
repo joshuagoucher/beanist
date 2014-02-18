@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :subscribe
   has_secure_password
 
 
@@ -15,6 +15,11 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   
   validates :password_confirmation, presence: true
+
+  def self.last_week
+    where(:created_at => 1.week.ago..Time.now, :subscribe => true)
+  end
+
 
 
   private

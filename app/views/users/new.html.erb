@@ -19,6 +19,9 @@
 			<%= f.password_field :password_confirmation, placeholder: "Confirmation", class: "form-control" %>
 		</div>
 		<br />
+		<%= f.label "Get Email" %> <br />
+   		<%= f.check_box :subscribe %> <br />
+
 		<%= f.submit "Create my account", class: 'btn btn-primary' %>
 	<% end %>
 

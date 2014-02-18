@@ -3,9 +3,12 @@
 <ul class="list-group">
 <% @users.each do |user| %>
 	<li class="list-group-item">
-		<%= user.name %> |
-		<%= user.email %> |
-		<%= link_to "Delete", user, method: :delete, data: {confirm: "Are you sure?"} %>
+		<%= user.name %> &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
+		<em><%= user.email %></em> &nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;&nbsp;
+		Subscribed to emails: <strong><%= user.subscribe? %></strong>&nbsp;&nbsp;&nbsp;	
+		<%= link_to user, method: :delete, data: {confirm: "Are you sure?"} do %>
+			<button type="button" class="close" aria-hidden="true">&times;</button>
+		<% end %>
 	</li>
 
 <% end %>

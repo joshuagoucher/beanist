@@ -150,3 +150,63 @@ FeaturedArticle.create(
 			source: 'dailycoffeenews.com',
 			tag_list: 'dailycoffeenews, news, coffee movie'
 	)
+
+User.create(
+	name: "test_user",
+	email: "test1@example.com",
+	password: "goucher",
+	password_confirmation: "goucher",
+	subscribe: "true"
+	)
+
+User.create(
+	name: "test_user",
+	email: "test2@example.com",
+	password: "goucher",
+	password_confirmation: "goucher",
+	subscribe: "true"
+	)
+
+User.create(
+	name: "test_user",
+	email: "test3@example.com",
+	password: "goucher",
+	password_confirmation: "goucher",
+	subscribe: "true"
+	)
+
+User.create(
+	name: "test_user",
+	email: "test4@example.com",
+	password: "goucher",
+	password_confirmation: "goucher",
+	subscribe: "true"
+	)
+
+User.create(
+	name: "test_user",
+	email: "test5@example.com",
+	password: "goucher",
+	password_confirmation: "goucher"
+	)
+
+User.create(
+	name: "test_user",
+	email: "test6@example.com",
+	password: "goucher",
+	password_confirmation: "goucher"
+	)
+
+User.create(
+	name: "test_user",
+	email: "test7@example.com",
+	password: "goucher",
+	password_confirmation: "goucher"
+	)
+
+User.create(
+	name: "test_user",
+	email: "test8@example.com",
+	password: "goucher",
+	password_confirmation: "goucher"
+	)
