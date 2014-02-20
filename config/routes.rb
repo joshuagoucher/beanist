@@ -2,7 +2,7 @@ Beanist2::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :featured_articles, path: 'f' do 
+  resources :featured_articles, path: 'article' do 
     member { post :vote }
 
   end
