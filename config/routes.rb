@@ -16,7 +16,7 @@ Beanist2::Application.routes.draw do
 
   get 'tags/:tag', to: 'featured_articles#index', as: :tag
 
-  get 'a/:tag',    to: 'featured_articles#index', as: :author
+  get '/:tag',    to: 'featured_articles#index', as: :author
 
   get '/:id',      to: 'featured_articles#show'
 
