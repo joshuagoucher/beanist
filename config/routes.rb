@@ -1,7 +1,5 @@
 Beanist2::Application.routes.draw do
 
-  get 'tags/:tag', to: 'featured_articles#index', as: :tag
-
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :featured_articles do 
@@ -14,7 +12,13 @@ Beanist2::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', :via => :delete
   match '/about',   to: 'user_pages#contact'
 
-  match '/:id', to: 'featured_articles#show'
+
+  get 't/:tag', to: 'featured_articles#index', as: :tag
+
+  match 'a/:id', to: 'featured_articles#show'
+
+
+
 
   root to: 'user_pages#index'
  
