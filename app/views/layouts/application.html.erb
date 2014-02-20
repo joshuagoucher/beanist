@@ -64,7 +64,7 @@
     </div>
   </div>
 
-  <div class="container flash">
+  <div class="container flash hidden-xs">
     <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>"><%= value %></div>
     <% end %>
@@ -75,7 +75,7 @@
 
 
 <div class="container footer-border">
-  <p class="text-muted text-center footer">What is Beanist?</p>
+  <p class="text-muted text-center footer"><%= link_to 'What is Beanist?', about_path %></p>
 </div>
 
 </body>

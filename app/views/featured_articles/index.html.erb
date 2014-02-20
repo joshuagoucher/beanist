@@ -18,7 +18,7 @@
 <div class="hidden-xs">
 <div class="container">
 <div class="article-row index-list">
-	<% @article.each do |item| %>
+	<% @article.reverse.each do |item| %>
 	<div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1 col-sm-9 col-sm-offset-2 article-item article-item-index">
 	<div class="box col-lg-5 col-sm-12 hidden-md"><%= image_tag item.img_url, class: "img-responsive" %></div>
 	<div class="box box-index col-md-5 hidden-lg hidden-sm"><%= image_tag item.img_url, class: "img-responsive" %></div>
@@ -69,6 +69,11 @@
 
 
 <div class="visible-xs">
+	<div class="container flash">
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+  </div>
 	
 
 	<div class="article-list">

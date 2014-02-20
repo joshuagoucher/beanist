@@ -185,6 +185,13 @@
 
 .footer {
 	margin-top: 10px;
+	a {
+		color: $gray-light;
+		&:hover {
+			color: $brand-primary;
+			text-decoration: none;
+		}
+	}
 }
 
 
