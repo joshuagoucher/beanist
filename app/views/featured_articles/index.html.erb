@@ -52,6 +52,12 @@
 			<% else %>
 			<%= render 'user_pages/dummyvote' %>
 			<% end %>
+			<% if signed_in? && current_user.admin? %>
+	<p class="col-lg-12"><%= link_to "delete", item, method: :delete,
+                                  data: { confirm: "Are you sure?" } %>
+         &nbsp;&bull;&nbsp;
+  	<%= link_to "edit", edit_featured_article_path(item) %></p>
+	   <% end %>
 		</p>
 	</div>
 </div>

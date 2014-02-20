@@ -1,6 +1,6 @@
 class FeaturedArticlesController < ApplicationController
   before_filter :signed_in_user, except: [:show, :index]
-  before_filter :admin_user, only: [:new, :create, :destroy]
+  before_filter :admin_user, only: [:new, :create, :destroy, :edit, :update]
 
   def index
     if params[:tag]
@@ -14,6 +14,19 @@ class FeaturedArticlesController < ApplicationController
   def show
   	@article = FeaturedArticle.find(params[:id])
     redirect_to @article.url
+  end
+
+  def edit
+    @article = FeaturedArticle.find(params[:id])
+  end
+
+  def update 
+    @article = FeaturedArticle.find(params[:id])
+    if @article.update_attributes(params[:featured_article])
+      redirect_to root_url
+    else
+      render 'edit'
+    end
   end
 
   def new
