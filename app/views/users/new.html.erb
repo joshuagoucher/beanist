@@ -1,28 +1,25 @@
+<% provide(:title, 'Sign Up') %>
 <div class="container">
-	
-	<h2>Sign up!</h2>
+	<div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+	<h1 class="signupform">Sign up!</h1><br />
 	<%= form_for @user do |f| %>
 	<%= render 'shared/error_messages' %>
-		<div class="input-group">
+		<div class="form-group">
 			<%= f.text_field :name, placeholder: "Name", class: "form-control" %>
 		</div>
-		<br />
-		<div class="input-group">
+		<div class="form-group">
 			<%= f.text_field :email, placeholder: "Email", class: "form-control" %>
 		</div>
-		<br />
-		<div class="input-group">
+		<div class="form-group">
 			<%= f.password_field :password, placeholder: "Password", class: "form-control" %>
 		</div>
-		<br />
-		<div class="input-group">
+		<div class="form-group">
 			<%= f.password_field :password_confirmation, placeholder: "Confirmation", class: "form-control" %>
 		</div>
-		<br />
-		<%= f.label "Get Email" %> <br />
-   		<%= f.check_box :subscribe %> <br />
-
+		<div class="checkbox">
+   		<%= f.check_box :subscribe %><%= f.label "Subscribe to The Beanist weekly email!" %>
+   		</div>
 		<%= f.submit "Create my account", class: 'btn btn-primary' %>
 	<% end %>
-
+	</div>
 </div>

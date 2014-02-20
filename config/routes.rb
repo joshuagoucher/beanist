@@ -12,6 +12,7 @@ Beanist2::Application.routes.draw do
   match '/signup',  to: 'users#new' 
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', :via => :delete
+  match '/about',   to: 'user_pages#contact'
 
   match '/:id', to: 'featured_articles#show'
 

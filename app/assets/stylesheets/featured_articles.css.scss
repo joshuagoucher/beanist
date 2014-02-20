@@ -137,8 +137,8 @@
 
 
 .top-header {
-	border-bottom: #ddd 1px solid;
-	background-color: $gray-lighter;
+	border-bottom: #bfbfbf 1px solid;
+	background-color: #cfcfcf;
 }
 
 .beanisty  {
@@ -185,6 +185,23 @@
 
 .footer {
 	margin-top: 10px;
+}
+
+
+/* 			SIGN IN / SIGN UP UI 		*/
+
+.flash {
+	margin-top: 20px;
+}
+
+.signupform {
+	font-family: 'Droid Sans', sans-serif;
+}
+
+/*				ABOUT PAGE 			*/
+
+.about-title {
+	margin-bottom: 30px;
 }
 
 

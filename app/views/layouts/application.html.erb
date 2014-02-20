@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Beanist THE FRONT PAGE OF COFFEE | Speciality Coffee News, Brew Guides &amp; Coffee House Reviews</title>
+  <title>Beanist | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -39,6 +39,9 @@
     </div> 
   </div>
 
+  
+     
+
 
 
 
@@ -61,6 +64,11 @@
     </div>
   </div>
 
+  <div class="container flash">
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+  </div>
   
 
 <%= yield %>
