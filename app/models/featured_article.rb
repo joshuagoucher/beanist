@@ -1,7 +1,7 @@
 class FeaturedArticle < ActiveRecord::Base
   attr_accessible :editors_comment, :img_url, :summary, 
   				  :title, :url, :pubdate, :source, :tag_list
-  acts_as_taggable
+  acts_as_ordered_taggable
 
  
 
