@@ -63,12 +63,6 @@
       <h1 class="beanist-xs text-center"><%= link_to 'Beanist', root_url %></h1>
     </div>
   </div>
-
-  <div class="container flash hidden-xs">
-    <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>"><%= value %></div>
-    <% end %>
-  </div>
   
 
 <%= yield %>
