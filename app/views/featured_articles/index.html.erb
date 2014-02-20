@@ -1,21 +1,24 @@
 <% if params[:tag] %>
-<% provide(:title, params[:tag].upcase) %>
+<% provide(:title, params[:tag]) %>
 <% end %>
 
 <div class="container hidden-xs">
-	<h1 class="tagline text-center"><%= params[:tag] %></h1>
+	<h1 class="tagline text-center"><%= params[:tag] %>
+	</h1>
 </div>
 
 
 <div class="tagline-bar-xs visible-xs">
 	<div class="container">
-		<h2 class="tagline-xs text-center"><%= params[:tag] %></h2>
+		<h2 class="tagline-xs text-center"><%= params[:slug] %></h2>
 	</div>
 </div>
 
 <div class="container">
 	<p class="text-center" id="vote-notice"></p>
 </div>
+
+
 
 
 <div class="hidden-xs">
@@ -36,7 +39,7 @@
 		</p>
 		<p class="pull-left tags">
 			&nbsp;&bull;
-			<%= link_to item.source, tag_path(item.tag_list.first) , class: "tag-link" %> &bull; 
+			<%= link_to item.source, tag_path(item.tag_list.first), class: "tag-link" %> &bull; 
 			<%= link_to item.tag_list[1], tag_path(item.tag_list[1]), class: "tag-link" %>
 		</p>
 

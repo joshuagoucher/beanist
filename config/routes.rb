@@ -14,9 +14,9 @@ Beanist2::Application.routes.draw do
   match '/about',   to: 'user_pages#contact'
 
 
-  get 'tags/:tag', to: 'featured_articles#index', as: :tag
+  get "tags/:tag", to: 'featured_articles#index', as: :tag
 
-  get '/:tag',    to: 'featured_articles#index', as: :author
+  get '/a/:tag',    to: 'featured_articles#index', as: :author
 
   get '/:id',      to: 'featured_articles#show'
 
