@@ -2,8 +2,9 @@ Beanist2::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :featured_articles do 
+  resources :featured_articles, path: 'f' do 
     member { post :vote }
+
   end
   
 
@@ -13,16 +14,19 @@ Beanist2::Application.routes.draw do
   match '/about',   to: 'user_pages#contact'
 
 
-  get 't/:tag', to: 'featured_articles#index', as: :tag
+  get 'tags/:tag', to: 'featured_articles#index', as: :tag
 
-  match 'a/:id', to: 'featured_articles#show'
+  get 'a/:tag',    to: 'featured_articles#index', as: :author
+
+  get '/:id',      to: 'featured_articles#show'
 
 
 
 
   root to: 'user_pages#index'
+  
  
-
+ 
 
 
   # The priority is based upon order of creation:

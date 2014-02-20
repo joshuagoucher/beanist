@@ -4,7 +4,7 @@ class FeaturedArticlesController < ApplicationController
 
   def index
     if params[:tag]
-      @article = FeaturedArticle.tagged_with(params[:tag])
+      @article = FeaturedArticle.tagged_with(params[:tag]).reverse
     else
       redirect_to root_url unless signed_in? && current_user.admin?
       @article = FeaturedArticle.all.reverse
@@ -62,12 +62,17 @@ class FeaturedArticlesController < ApplicationController
    def signed_in_user
       unless signed_in?
         redirect_to root_url
-      end
+    end
     
     end
 
     def admin_user 
       redirect_to root_url unless current_user.admin?
     end
+
+    def slug(tag)
+      tag.gsub(' ', '-') 
+    end
+
 
 end
