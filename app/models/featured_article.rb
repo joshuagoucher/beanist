@@ -7,7 +7,7 @@ class FeaturedArticle < ActiveRecord::Base
 
   has_reputation :votes, source: :user, aggregated_by: :sum
 
-  validates :img_url, presence: true, length: { maximum: 140 }
+  validates :img_url, presence: true, length: { maximum: 160 }
   validates :title, presence: true, length: { maximum: 140 }
   validates :url, presence: true, length: { maximum: 140 }
   validates :source, presence: true, length: { maximum: 140 }

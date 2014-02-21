@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   def self.last_week
-    where(:created_at => 1.week.ago..Time.now, :subscribe => true)
+    where(created_at: 1.week.ago..Time.now, subscribe: true)
   end
 
 
