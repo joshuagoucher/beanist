@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_filter :admin_user, only: [:index, :new, :edit, :create, :update, :destroy]
-  # GET /posts
+before_filter :signed_in_user, except: [:show, :index]
+  before_filter :admin_user, only: [:new, :create, :destroy, :edit, :update]  # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
@@ -85,9 +85,17 @@ class PostsController < ApplicationController
   private
 
 
-    def admin_user 
-      redirect_to root_url unless signed_in? && current_user.admin?
+    def signed_in_user
+      unless signed_in?
+        redirect_to root_url
     end
+    
+    end
+
+    def admin_user 
+      redirect_to root_url unless current_user.admin?
+    end
+
 
 
 end

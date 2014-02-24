@@ -70,9 +70,6 @@ class FeaturedArticlesController < ApplicationController
       redirect_to root_url unless current_user.admin?
     end
 
-    def slug(tag)
-      tag.gsub(' ', '-') 
-    end
-
+  
 
 end
