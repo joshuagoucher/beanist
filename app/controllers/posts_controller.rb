@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :admin_user, except: :show
   # GET /posts
   # GET /posts.json
   def index
@@ -80,4 +81,14 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+
+
+    def admin_user 
+      redirect_to root_url unless signed_in? && current_user.admin?
+    end
+
+
 end
+

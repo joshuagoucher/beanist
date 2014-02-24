@@ -1,26 +1,3 @@
-<!-- <div class="container">
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Title:</b>
-  <%= @post.title %>
-</p>
-
-<p>
-  <b>Body:</b>
-  <%= sanitize(@post.body) %>
-</p>
-
-<p>
-  <b>Author:</b>
-  <%= @post.author %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
-</div>
- -->
 
 <% provide(:title, @post.title.upcase) %>
 
