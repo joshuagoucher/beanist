@@ -1,5 +1,5 @@
 <% if params[:tag] %>
-<% provide(:title, params[:tag]) %>
+<% provide(:title, params[:tag]).upcase %>
 <% end %>
 
 <div class="container hidden-xs">
