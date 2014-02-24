@@ -2,11 +2,10 @@ Beanist2::Application.routes.draw do
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-  resources :posts
   resources :featured_articles do 
     member { post :vote }
-
   end
+   resources :posts
   
 
   match '/signup',  to: 'users#new' 
