@@ -343,7 +343,24 @@
 }
 
 
+/*           NAV-TAGS          */
 
+.tag-nav {
+	background-color: $gray-lighter;
+}
+
+.tag-nav-links {
+	color: $gray-light;
+	padding-top: 5px;
+	margin-bottom:5px;
+	a {
+		color: $gray-light;
+		&:hover {
+			color: $gray-dark;
+			text-decoration: none;
+		}
+	}
+}
 
 
 
