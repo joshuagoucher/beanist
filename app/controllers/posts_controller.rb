@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :admin_user, except: :show
+  before_filter :admin_user, only: [:index, :new, :edit, :create, :update, :destroy]
   # GET /posts
   # GET /posts.json
   def index
