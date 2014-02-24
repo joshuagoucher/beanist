@@ -241,6 +241,12 @@
 
 	</div>
 
+
+
+
+
+</div>
+
 <% if signed_in? && current_user.admin? %>
   <div class="container">
     <div class="well col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -252,7 +258,6 @@
         </a>
       </p>
       <p><%= link_to "All users", users_path %></p>
-      <p><%= link_to "Posts", posts_path %></p>
       <p>Todays favourites</p>
       <ol>
       <% @daily_favs.each do |item| %>
@@ -275,8 +280,4 @@
     </div>
   </div>
 <% end %>
-
-
-
-</div>
 
