@@ -1,5 +1,8 @@
 Beanist2::Application.routes.draw do
 
+  resources :posts
+
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :featured_articles do 
