@@ -24,16 +24,22 @@
 
 <div class="container hidden-xs">
 
-	<!-- FIRST ROW ////////////////////////////////////// -->
+	<!-- FIRST ROW 					 -->
 <div class="row article-row">
 
 <% @featured[0..2].each do |item| %>
 
 <div class="col-lg-4 col-md-4 col-sm-4 article-item">
 	<div class="box"><%= image_tag item.img_url, class: "img-responsive" %></div>
-	<h3 class="featurey">
-		<%= link_to item.title, item, target: "_blank" %>
-	</h3>
+	<% if item.external? %>
+		<h3 class="featurey">
+			<%= link_to item.title, item, target: "_blank" %>
+		</h3>
+	<% else %>
+		<h3 class="featurey">
+			<%= link_to item.title, item %>
+		</h3>
+	<% end %>
 
 	<p class="summaryz"><%= truncate item.summary, length: 160  %></p>
 	<p class="pull-left vote-count" id="vote-<%= item.id %>">

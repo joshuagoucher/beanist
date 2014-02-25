@@ -47,7 +47,10 @@
 			<br />
 			<div class="form-group">
 				<%= f.text_field :source, placeholder: "Source", class: "form-control" %>
-			</div>
+			</div><br />
+			<div class="checkbox">
+	   		<%= f.check_box :external %><%= f.label "Is article external?" %>
+	   		</div>
 			<br />
 			<%= f.submit "Add Article", class: "btn btn-primary" %>
 
