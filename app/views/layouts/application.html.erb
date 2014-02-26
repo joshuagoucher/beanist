@@ -25,28 +25,37 @@
     <div class="container">
       <div class="col-lg-12">
         <h1 class="beanisty pull-left"><%= link_to 'Beanist', root_url %></h1>
-        <% if signed_in? %>
-        <p class="pull-right signin">
-          Hello, <%= current_user.name %> &bull; 
-          <%= link_to 'Sign out', signout_path, method: :delete %>
+        
+        <p class="nav-options pull-right">
+          Front Page &bull; Events &bull; Coffee Jobs &bull; Shop
         </p>
-        <% else %>
-        <p class="pull-right signin"><%= link_to 'Sign in', signin_path %> &bull; 
-          <%= link_to 'Register', signup_path %>
-        <% end %>
-        </p>
+
+        
       </div>
     </div> 
   </div>
+
+
   <div class="tag-nav hidden-xs">
-  <div class="container">
-    <p class="tag-nav-links col-lg-12 col-md-12 col-sm-12">
-      <a href="/tags/news">News</a> &bull;
-      <a href="/tags/brew-guides">Brew Guides</a> &bull;
-      <a href="/tags/reviews">Reviews</a>
-    </p>
+    <div class="container">
+      <div class=" col-lg-12 col-md-12 col-sm-12">
+        <p class="tag-nav-links pull-left">
+          <a href="/tags/news">News</a> &bull;
+          <a href="/tags/brew-guides">Brew Guides</a> &bull;
+          <a href="/tags/reviews">Reviews</a>
+        </p>
+        <p class="tag-nav-links pull-right">
+          <% if signed_in? %>
+            <a href="#">Hello <%= current_user.name %></a> &bull;
+            <%= link_to "Sign out", signout_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign in", signin_path %> &bull;
+            <%= link_to "Register", signup_path %>
+          <% end %>
+        </p>
+      </div>
+    </div>
   </div>
-</div>
 
   
      

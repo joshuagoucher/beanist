@@ -137,8 +137,8 @@
 
 
 .top-header {
-	border-bottom: #bfbfbf 1px solid;
-	background-color: #cfcfcf;
+	/*border-bottom: #bfbfbf 1px solid;*/
+	background-color: $brand-primary;
 }
 
 .beanisty  {
@@ -147,19 +147,28 @@
 	font-family: airstreamregular;
 	font-size: 26px;
 		a {
-		color: $gray-dark;
-		letter-spacing: 1px;
+		color: $gray-lighter;
+		letter-spacing: 2px;
 			&:hover {
 				text-decoration:none;
-				 color: $gray-darker;
+				 color: $gray-lighter;
 			}
 		}
 }
 
+.nav-options {
+	margin-top: 14px;
+	font-family: 'Droid Sans', sans-serif;
+	color: $gray-lighter;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
 .tagline {
 	font-family: headline_onehplhs;
-	font-size: 28px;
-	letter-spacing: 2px;
+	font-size: 32px;
+	letter-spacing: 4px;
 }
 
 .signin {
