@@ -328,7 +328,10 @@
         Article sources
         </a>
       </p>
-      <p><%= link_to "All users", users_path %></p>
+      <p><%= link_to "All Users", users_path %></p>
+      <p><%= link_to "All Posts", posts_path %></p>
+      <p><%= link_to "New Post", new_post_path %></p>
+
       <p>Todays favourites</p>
       <ol>
       <% @daily_favs.each do |item| %>
