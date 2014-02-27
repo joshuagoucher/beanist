@@ -13,6 +13,10 @@ class FeaturedArticle < ActiveRecord::Base
   validates :source, presence: true, length: { maximum: 140 }
   validates :summary, presence: true
 
+  def to_param
+    "#{id} #{title}".parameterize
+  end
+
 
 
   def self.last_week
