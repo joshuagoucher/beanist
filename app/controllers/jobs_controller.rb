@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_filter :admin_user
   # GET /jobs
   # GET /jobs.json
   def index
@@ -84,6 +85,14 @@ class JobsController < ApplicationController
 
   def board
     @jobs = Job.all.reverse
+  end
+
+  private 
+
+   def admin_user
+    unless  signed_in? && current_user.admin?
+      redirect_to root_url
+    end
   end
 
 end
