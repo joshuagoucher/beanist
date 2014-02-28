@@ -385,8 +385,23 @@
 }
 
 
+/*             JOBS 				*/
 
+.label-job {
+	margin-right: 15px;
+}
 
+.panel-job a {
+	color: $gray-dark;
+	&:hover {
+		color:$gray-dark;
+		text-decoration: none;
+	}
+}
+
+.job-summary {
+	color: $gray;
+}
 
 
 

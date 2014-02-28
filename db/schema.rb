@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225131821) do
+ActiveRecord::Schema.define(:version => 20140227201437) do
 
   create_table "featured_articles", :force => true do |t|
     t.string   "img_url"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(:version => 20140225131821) do
     t.string   "pubdate"
     t.string   "source"
     t.boolean  "external",        :default => true
+  end
+
+  create_table "jobs", :force => true do |t|
+    t.string   "title"
+    t.string   "location"
+    t.string   "job_type"
+    t.string   "company"
+    t.string   "category"
+    t.text     "description"
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.boolean  "verified",    :default => false
   end
 
   create_table "posts", :force => true do |t|

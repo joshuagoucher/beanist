@@ -1,0 +1,83 @@
+<% provide(:title, "Job Board") %>
+
+<div class="container">
+<h1>Listing jobs</h1>
+
+
+
+<%= link_to 'New Job', new_job_path %>
+</div>
+
+<div class="container">
+    <div class="col-lg-8">
+        <% @recent_jobs.each do |job| %>
+            
+            <div class="panel panel-job panel-info">
+                <%= link_to job do %>
+                <div class="panel-body">
+
+                    <% if job.job_type == "Full Time" %>
+                    <span class="label label-job label-primary"><%= job.job_type %></span>
+                    <% end %>
+
+                    <% if job.job_type == "Part Time" %>
+                    <span class="label label-job label-success"><%= job.job_type %></span>
+                    <% end %>
+
+                    <% if job.job_type == "Freelance" %>
+                    <span class="label label-job label-warning"><%= job.job_type %></span>
+                    <% end %>
+
+                     <% if job.job_type == "Temp/Seasonal" %>
+                    <span class="label label-job label-info"><%= job.job_type %></span>
+                    <% end %>
+
+                     <% if job.job_type == "Intern" %>
+                    <span class="label label-job label-default"><%= job.job_type %></span>
+                    <% end %>
+
+                    
+                    <strong><%= job.title %></strong>
+                    <span class="job-summary">at <%= job.company %></span>
+                    <span class="job-summary">in <%= job.location %></span>
+                </div>
+                <% end %>
+            </div>
+            
+        <% end %>
+
+        <% @older_jobs.each do |job| %>
+            
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                    <% if job.job_type == "Full Time" %>
+                    <span class="label label-job label-primary"><%= job.job_type %></span>
+                    <% end %>
+
+                    <% if job.job_type == "Part Time" %>
+                    <span class="label label-job label-success"><%= job.job_type %></span>
+                    <% end %>
+
+                    <% if job.job_type == "Freelance" %>
+                    <span class="label label-job label-warning"><%= job.job_type %></span>
+                    <% end %>
+
+                     <% if job.job_type == "Temp/Seasonal" %>
+                    <span class="label label-job label-info"><%= job.job_type %></span>
+                    <% end %>
+
+                     <% if job.job_type == "Intern" %>
+                    <span class="label label-job label-default"><%= job.job_type %></span>
+                    <% end %>
+
+                    
+                    <strong><%= job.title %></strong>
+                    <small>at <%= job.company %></small>
+                    <small>in <%= job.location %></small>
+                </div>
+            </div>
+
+        <% end %>
+    </div>
+</div>
