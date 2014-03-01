@@ -3,6 +3,9 @@ class Job < ActiveRecord::Base
 
   acts_as_ordered_taggable
 
+  def to_param
+    "#{id} #{title} #{company}".parameterize
+  end
 
   def self.verified_jobs
   	where(verified: true)

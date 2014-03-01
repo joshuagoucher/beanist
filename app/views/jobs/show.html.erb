@@ -1,35 +1,17 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "#{@job.title} | #{@job.company}") %>
 
-<p>
-  <b>Title:</b>
-  <%= @job.title %>
-</p>
+<div class="container">
+  <div class="col-lg-12">
+    <h1 class="job-title text-center"><%= @job.title %></h1>
+    <p class"text-right">
+      <%= @job.location %> &bull;
+      <%= @job.company %> &bull; 
+      <%= @job.job_type %> &bull; 
+      <%= @job.category %>
+    </p>
+    <p class="job-description">
+      <%= @job.description %>
+    </p>
+  </div>
 
-<p>
-  <b>Location:</b>
-  <%= @job.location %>
-</p>
-
-<p>
-  <b>Job type:</b>
-  <%= @job.job_type %>
-</p>
-
-<p>
-  <b>Company:</b>
-  <%= @job.company %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @job.category %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @job.description %>
-</p>
-
-
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+</div>
