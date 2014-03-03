@@ -1,15 +1,14 @@
 <% provide(:title, "Job Board") %>
 
-<div class="container">
-<h1>Listing jobs</h1>
 
-
-
-<%= link_to 'New Job', new_job_path %>
-</div>
 
 <div class="container">
     <div class="col-lg-8">
+        <% if params[:category] %>
+        <h1 class="job-board text-center"><%= params[:category].upcase %></h1>
+        <% else %>
+        <h1 class="job-board text-center">ALL JOBS</h1>
+        <% end %>
         <% @recent_jobs.each do |job| %>
             
             <div class="panel panel-job panel-info">
@@ -80,5 +79,98 @@
             </div>
 
         <% end %>
+    </div>
+    <div class="col-lg-4 job-nav">
+        <ul class="nav nav-pills nav-stacked">
+            <li>
+                <a href="/jobs">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">All Jobs</a>
+                </a>
+            </li>
+            <li class="active disabled">
+                <a href="#" class="text-center">
+                    Hours
+                </a>
+            </li>
+            <li>
+                <a href="/jobs/category/full time">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">Full Time</a>
+                </a>
+            </li>
+            <li>
+                <a href="/jobs/category/part time">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">Part Time</a>
+                </a>
+            </li>
+            <li>
+                <a href="/jobs/category/freelance">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">Freelance</a>
+                </a>
+            </li>
+            <li>
+                <a href="/jobs/category/temp seasonal">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">Temp/Seasonal</a>
+                </a>
+            </li>
+
+            <li class="active disabled">
+                <a href="#" class="text-center">
+                    Category
+                </a>
+            </li>
+            <li>
+                <a href="/jobs/category/barista">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">Barista</a>
+                </a>
+            </li>
+            <li>
+                <a href="/jobs/category/manager">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">Manager</a>
+                </a>
+            </li>
+            <li>
+                <a href="/jobs/category/trainer">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">Trainer</a>
+                </a>
+            </li>
+            <li>
+                <a href="/jobs/category/roaster">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">Roaster</a>
+                </a>
+            </li>
+            <li>
+                <a href="/jobs/category/sales">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">Sales</a>
+                </a>
+            </li>
+            <li>
+                <a href="/jobs/category/logistics">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">Logistics</a>
+                </a>
+            </li>
+            <li>
+                <a href="/jobs/category/food">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">Food</a>
+                </a>
+            </li>
+            <li>
+                <a href="/jobs/category/other">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="pull-right">Other</a>
+                </a>
+            </li>
+        </ul>
     </div>
 </div>

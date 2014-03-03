@@ -3,12 +3,17 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @recent_jobs = Job.recent_jobs.reverse
-    @older_jobs = Job.older_jobs.reverse
+    if params[:category]
+      @recent_jobs = Job.recent_jobs.tagged_with(params[:category]).reverse
+      @older_jobs = Job.older_jobs.tagged_with(params[:category]).reverse
+    else
+      @recent_jobs = Job.recent_jobs.reverse
+      @older_jobs = Job.older_jobs.reverse
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @jobs }
+    end
     end
   end
 

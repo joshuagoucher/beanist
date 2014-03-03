@@ -4,12 +4,21 @@
   <div class="col-lg-6 col-lg-offset-3">
     <h1 class="job-title text-center"><%= @job.title %></h1>
       <div class="text-center">
+        <% if @job.tag_list.count >= 4 %>
+        <p class="text-muted">
+        <%= link_to @job.category, category_path(@job.tag_list[0]) %> &bull;
+        <%= link_to @job.job_type, category_path(@job.tag_list[1]) %> &bull; 
+        <%= link_to @job.company, category_path(@job.tag_list[2]) %> &bull; 
+        <%= link_to @job.location, category_path(@job.tag_list[3]) %> 
+        </p>
+        <% else %>
         <p class="text-muted">
         <%= @job.category %> &bull;
-        <%= @job.company %> &bull; 
         <%= @job.job_type %> &bull; 
+        <%= @job.company %> &bull; 
         <%= @job.location %> 
         </p>
+        <% end %>
       </div>
     
     <p class="job-description">

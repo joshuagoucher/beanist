@@ -387,6 +387,10 @@
 
 /*           JOBS 			*/
 
+.job-board {
+	font-family: 'Passion One', cursive;
+}
+
 .label-job {
 	margin-right: 15px;
 }
@@ -402,6 +406,12 @@
 .job-summary {
 	color: $gray;
 }
+
+.job-nav {
+	margin-top: 50px;
+}
+
+
 
 
 /* Show Page */
