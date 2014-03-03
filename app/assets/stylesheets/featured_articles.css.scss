@@ -189,7 +189,7 @@
 
 .footer-border {
 	border-top: 1px solid $gray-lighter;
-	margin-top: 50px;
+	margin-top: 200px;
 	margin-bottom: 20px;
 }
 
@@ -416,12 +416,24 @@
 
 /* Show Page */
 
+.back-to-jobs {
+	margin-top: 20px;
+}
+
 .job-title {
 	font-family: 'Passion One', cursive;
 }
 
 .job-description {
 	font-family: 'Droid Sans', sans-serif;
+}
+
+.job-tags {
+	color: $gray-light;
+	&:hover {
+		color:$gray-dark;
+		text-decoration: none;
+	}
 }
 
 
