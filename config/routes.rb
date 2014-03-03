@@ -1,7 +1,6 @@
 Beanist2::Application.routes.draw do
 
-  resources :jobs
-
+  resources :jobs 
 
   resources :users
   resources :sessions, only: [:new, :create, :destroy]

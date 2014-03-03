@@ -87,6 +87,7 @@ class JobsController < ApplicationController
     @jobs = Job.all.reverse
   end
 
+
   private 
 
    def admin_user
