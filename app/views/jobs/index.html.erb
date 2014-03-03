@@ -11,7 +11,7 @@
         <% end %>
     <% if @recent_jobs.count == 0 && @older_jobs.count == 0 %>
         <div class="alert alert-danger">
-            <p>I'm sorry, there's no jobs matching that category</p>
+            <p>I'm sorry, we can't find any jobs for that at the moment</p>
         </div>
         <% else %>
         <% @recent_jobs.each do |job| %>
@@ -92,7 +92,7 @@
                     <small>at <%= job.company %></small>
                     <small>in <%= job.location %></small>
 
-                    
+
                     <!-- ADMIN FUNCTIONALITY -->
 
                     <% if signed_in? && current_user.admin? %>
