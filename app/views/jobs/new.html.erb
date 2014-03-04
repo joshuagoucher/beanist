@@ -1,8 +1,38 @@
 <% provide(:title, "Post a New Job") %>
 <div class="container">
-<h1>New job</h1>
+	<div class="col-lg-2">
+        <div class="back-to-jobs">
+          <a href="/jobs">
+            <p><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;&nbsp;Back to Job Board</p>
+          </a>
+        </div>
+    </div>
+	<div class="col-lg-12">	
+		<h1 class="job-title">Post a New Job</h1>
+	</div>
+
+
+ <div class="col-lg-4">
+    <div class="panel panel-info">
+	    <div class="panel-heading"><h4 class="panel-title">Please Note:-</h4></div>
+	    
+	      <ul class="list-group">
+	        <li class="list-group-item">Be as specific as possible in the description</li>
+	        <li class="list-group-item">Write about the role within the company</li>
+	        <li class="list-group-item">Include things like day-to-day responsibilties</li>
+	        <li class="list-group-item">Include in the description how someone can apply for the position, e.g. via email</li>
+	        <li class="list-group-item">Include a link to your website if you like</li>
+	      </ul>
+  
+  	</div>
+    
+ </div> 
+
+
+<div class=" col-lg-8 well">
+<%= render 'form' %>
 </div>
 
-<%= render 'form' %>
+</div>
 
 <%= link_to 'Back', jobs_path %>

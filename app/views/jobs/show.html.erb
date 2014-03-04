@@ -10,6 +10,7 @@
 </div>
 <div class="container">
   <div class="col-lg-6 col-lg-offset-3">
+    <div class="page-header">
     <h1 class="job-title text-center"><%= @job.title %></h1>
       <div class="text-center">
         <% if @job.tag_list.count >= 4 %>
@@ -28,9 +29,11 @@
         </p>
         <% end %>
       </div>
+    </div>
     
     <p class="job-description">
-      <%= @job.description %>
+      <%= simple_format @job.description.sanitize, class: "job-description" %>
     </p>
+
   </div>
 </div>
