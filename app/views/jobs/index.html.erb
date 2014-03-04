@@ -1,4 +1,9 @@
-<% provide(:title, "Job Board") %>
+<% if params[:category] %>
+    <% provide(:title, "Job Board | #{params[:category].upcase}") %>
+<% else %> 
+    <% provide(:title, "Job Board") %>
+<% end %>
+
 
 
 

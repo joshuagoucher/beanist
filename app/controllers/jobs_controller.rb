@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_filter :admin_user
+  before_filter :admin_user, except: [:new, :create, :thankyou]
   # GET /jobs
   # GET /jobs.json
   def index
@@ -51,7 +51,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
+        format.html { render 'thankyou' }
         format.json { render json: @job, status: :created, location: @job }
       else
         format.html { render action: "new" }
@@ -87,11 +87,8 @@ class JobsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def board
-    @jobs = Job.all.reverse
+  def thankyou
   end
-
 
   private 
 

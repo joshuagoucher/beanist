@@ -9,7 +9,7 @@ Beanist2::Application.routes.draw do
   end
    resources :posts
   
-
+ get '/thankyou', to: 'jobs#thankyou'
   match '/signup',  to: 'users#new' 
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', :via => :delete
@@ -21,6 +21,8 @@ Beanist2::Application.routes.draw do
   get '/a/:tag',    to: 'featured_articles#index'
 
   get '/:id',      to: 'featured_articles#show'
+
+ 
 
   get 'jobs/category/:category', to: 'jobs#index', as: :category
 
