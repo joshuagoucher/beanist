@@ -26,239 +26,45 @@
 
 
 
-	<!-- FIRST ROW 					 -->
+<!-- FIRST ROW 					 -->
 	<div class="row article-row">
-
-	<% @featured[0..2].each do |item| %>
-
-		<div class="col-lg-4 col-md-4 col-sm-4 article-item">
-			<div class="box"><%= image_tag item.img_url, class: "img-responsive" %></div>
-			<% if item.external? %>
-				<h3 class="featurey">
-					<%= link_to item.title, item, target: "_blank" %>
-				</h3>
-			<% else %>
-				<h3 class="featurey">
-					<%= link_to item.title, item %>
-				</h3>
-			<% end %>
-
-			<p class="summaryz"><%= truncate item.summary, length: 160  %></p>
-			<p class="pull-left vote-count" id="vote-<%= item.id %>">
-				<%= item.reputation_for(:votes).to_i %> 
-			</p>
-			<p class="pull-left tags">
-				&nbsp;&bull;
-				<%= link_to item.source, tag_path(item.tag_list.first) , class: "tag-link" %> &bull; 
-				<%= link_to item.tag_list[1], tag_path(item.tag_list[1]), class: "tag-link" %>
-			</p>
-
-			<p class="updown pull-right">
-				<em id="vote-notice-<%= item.id %>"></em>
-				<% if signed_in? %>
-				
-				<%=link_to vote_featured_article_path(item, type: "up"), method: "post", remote: true, class: "voteup" do %>
-					<span class="glyphicon glyphicon-circle-arrow-up"></span>
-				<% end %>
-				 
-				<%=link_to vote_featured_article_path(item, type: "down"), method: "post", remote: true, class: "votedown" do %>
-					<span class="glyphicon glyphicon-circle-arrow-down"></span>
-				<% end %>
-
-				<% else %>
-				<%= render 'dummyvote' %>
-				<% end %>
-			</p>
-			<% if signed_in? && current_user.admin? %>
-			<p class="col-lg-12 col-md-12 col-sm-12"><%= link_to "delete", item, method: :delete,
-		                                  data: { confirm: "Are you sure?" } %>
-		         &nbsp;&bull;&nbsp;
-		  	<%= link_to "edit", edit_featured_article_path(item) %></p>
-			   <% end %>
-		</div>
-
-
-	<% end %>
-
+		<% @featured[0..2].each do |featured_article| %>
+			<%= render featured_article %>
+		<% end %>
 	</div>
 
 
-	<% if @featured.count >= 4 %>
-	
+<% if @featured.count >= 4 %>	
 <!-- SECOND ROW ///////////////////////////////////// -->
 
 	<div class="row article-row">
-
-		<% @featured[3..5].each do |item| %>
-
-		<div class="col-lg-4 col-md-4 col-sm-4 article-item">
-			<div class="box"><%= image_tag item.img_url, class: "img-responsive" %></div>
-			<% if item.external? %>
-				<h3 class="featurey">
-					<%= link_to item.title, item, target: "_blank" %>
-				</h3>
-			<% else %>
-				<h3 class="featurey">
-					<%= link_to item.title, item %>
-				</h3>
-			<% end %>
-
-			<p class="summaryz"><%= truncate item.summary, length: 160  %></p>
-			<p class="pull-left vote-count" id="vote-<%= item.id %>">
-				<%= item.reputation_for(:votes).to_i %> 
-			</p>
-			<p class="pull-left tags">
-				&nbsp;&bull;
-				<%= link_to item.source, tag_path(item.tag_list.first) , class: "tag-link" %> &bull; 
-				<%= link_to item.tag_list[1], tag_path(item.tag_list[1]), class: "tag-link" %>
-			</p>
-
-			<p class="updown pull-right">
-				<% if signed_in? %>
-				
-				<%=link_to vote_featured_article_path(item, type: "up"), method: "post", remote: true, class: "voteup" do %>
-					<span class="glyphicon glyphicon-circle-arrow-up"></span>
-				<% end %>
-				 
-				<%=link_to vote_featured_article_path(item, type: "down"), method: "post", remote: true, class: "votedown" do %>
-					<span class="glyphicon glyphicon-circle-arrow-down"></span>
-				<% end %>
-
-				<% else %>
-				<%= render 'dummyvote' %>
-				<% end %>
-			</p>
-			
-			<% if signed_in? && current_user.admin? %>
-			<p class="col-lg-12 col-md-12 col-sm-12"><%= link_to "delete", item, method: :delete,
-		                                  data: { confirm: "Are you sure?" } %>
-		         &nbsp;&bull;&nbsp;
-		  	<%= link_to "edit", edit_featured_article_path(item) %></p>
-			   <% end %>
-		</div>
-
-	<% end %>
-
+		<% @featured[3..5].each do |featured_article| %>
+			<%= render featured_article %>
+		<% end %>
 	</div>
-
-	<% end %>
-
+<% end %>
 
 
-	<% if @featured.count >= 7 %>	
+
+<% if @featured.count >= 7 %>	
 <!-- THIRD ROW ////////////////////////////////////////// -->
 
 	<div class="row article-row">
-
-	<% @featured[6..8].each do |item| %>
-
-		<div class="col-lg-4 col-md-4 col-sm-4 article-item">
-			<div class="box"><%= image_tag item.img_url, class: "img-responsive" %></div>
-			<% if item.external? %>
-				<h3 class="featurey">
-					<%= link_to item.title, item, target: "_blank" %>
-				</h3>
-			<% else %>
-				<h3 class="featurey">
-					<%= link_to item.title, item %>
-				</h3>
-			<% end %>
-
-			<p class="summaryz"><%= truncate item.summary, length: 160  %></p>
-			<p class="pull-left vote-count" id="vote-<%= item.id %>">
-				<%= item.reputation_for(:votes).to_i %> 
-			</p>
-			<p class="pull-left tags">
-				&nbsp;&bull;
-				<%= link_to item.source, tag_path(item.tag_list.first) , class: "tag-link" %> &bull; 
-				<%= link_to item.tag_list[1], tag_path(item.tag_list[1]), class: "tag-link" %>
-			</p>
-
-			<p class="updown pull-right">
-				<% if signed_in? %>
-				
-				<%=link_to vote_featured_article_path(item, type: "up"), method: "post", remote: true, class: "voteup" do %>
-					<span class="glyphicon glyphicon-circle-arrow-up"></span>
-				<% end %>
-				 
-				<%=link_to vote_featured_article_path(item, type: "down"), method: "post", remote: true, class: "votedown" do %>
-					<span class="glyphicon glyphicon-circle-arrow-down"></span>
-				<% end %>
-
-				<% else %>
-				<%= render 'dummyvote' %>
-				<% end %>
-			</p>
-			<% if signed_in? && current_user.admin? %>
-			<p class="col-lg-12 col-md-12 col-sm-12"><%= link_to "delete", item, method: :delete,
-		                                  data: { confirm: "Are you sure?" } %>
-		         &nbsp;&bull;&nbsp;
-		  	<%= link_to "edit", edit_featured_article_path(item) %></p>
-			   <% end %>
-		</div>
-
-	<% end %>
-
+		<% @featured[6..8].each do |featured_article| %>
+			<%= render featured_article %>
+		<% end %>
 	</div>
-
-	<% end %>
+<% end %>
 
 <% if @featured.count >= 10 %>
 <!--  FORTH ROW                       -->
 	
 	<div class="row article-row">
-
-	<% @featured[9..11].each do |item| %>
-
-		<div class="col-lg-4 col-md-4 col-sm-4 article-item">
-			<div class="box"><%= image_tag item.img_url, class: "img-responsive" %></div>
-			<% if item.external? %>
-				<h3 class="featurey">
-					<%= link_to item.title, item, target: "_blank" %>
-				</h3>
-			<% else %>
-				<h3 class="featurey">
-					<%= link_to item.title, item %>
-				</h3>
-			<% end %>
-
-			<p class="summaryz"><%= truncate item.summary, length: 160  %></p>
-			<p class="pull-left vote-count" id="vote-<%= item.id %>">
-				<%= item.reputation_for(:votes).to_i %> 
-			</p>
-			<p class="pull-left tags">
-				&nbsp;&bull;
-				<%= link_to item.source, tag_path(item.tag_list.first) , class: "tag-link" %> &bull; 
-				<%= link_to item.tag_list[1], tag_path(item.tag_list[1]), class: "tag-link" %>
-			</p>
-
-			<p class="updown pull-right">
-				<% if signed_in? %>
-				
-				<%=link_to vote_featured_article_path(item, type: "up"), method: "post", remote: true, class: "voteup" do %>
-					<span class="glyphicon glyphicon-circle-arrow-up"></span>
-				<% end %>
-				 
-				<%=link_to vote_featured_article_path(item, type: "down"), method: "post", remote: true, class: "votedown" do %>
-					<span class="glyphicon glyphicon-circle-arrow-down"></span>
-				<% end %>
-
-				<% else %>
-				<%= render 'dummyvote' %>
-				<% end %>
-			</p>
-			<% if signed_in? && current_user.admin? %>
-			<p class="col-lg-12 col-md-12 col-sm-12"><%= link_to "delete", item, method: :delete,
-		                                  data: { confirm: "Are you sure?" } %>
-		         &nbsp;&bull;&nbsp;
-		  	<%= link_to "edit", edit_featured_article_path(item) %></p>
-			   <% end %>
-		</div>
-
-	<% end %>
-
+		<% @featured[9..11].each do |featured_article| %>
+			<%= render featured_article %>
+		<% end %>
 	</div>
-	<% end %>
+<% end %>
 
 
 	
