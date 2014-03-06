@@ -38,6 +38,10 @@ end
 
 gem 'acts-as-taggable-on', '2.4.1'
 
+gem 'will_paginate', '~> 3.0'
+
+gem 'will_paginate-bootstrap'
+
 
 
 

@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20140227201437) do
     t.datetime "updated_at",                        :null => false
     t.string   "pubdate"
     t.string   "source"
+    t.datetime "created_date"
     t.boolean  "external",        :default => true
   end
 
