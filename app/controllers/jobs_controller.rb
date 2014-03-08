@@ -7,7 +7,7 @@ class JobsController < ApplicationController
       @recent_jobs = Job.recent_jobs.tagged_with(params[:category])
       @older_jobs = Job.older_jobs.tagged_with(params[:category])
     else
-      @recent_jobs = Job.recent_jobs.reverse
+      @recent_jobs = Job.recent_jobs.verified_jobs.reverse
       @older_jobs = Job.older_jobs.reverse
 
     respond_to do |format|
