@@ -4,8 +4,8 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     if params[:category]
-      @recent_jobs = Job.recent_jobs.tagged_with(params[:category]).reverse
-      @older_jobs = Job.older_jobs.tagged_with(params[:category]).reverse
+      @recent_jobs = Job.recent_jobs.tagged_with(params[:category])
+      @older_jobs = Job.older_jobs.tagged_with(params[:category])
     else
       @recent_jobs = Job.recent_jobs.reverse
       @older_jobs = Job.older_jobs.reverse
