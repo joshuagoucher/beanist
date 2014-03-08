@@ -34,7 +34,7 @@
 	</div>
 
 
-<% if @featured.count >= 4 %>	
+	
 <!-- SECOND ROW ///////////////////////////////////// -->
 
 	<div class="row article-row">
@@ -42,11 +42,11 @@
 			<%= render featured_article %>
 		<% end %>
 	</div>
-<% end %>
 
 
 
-<% if @featured.count >= 7 %>	
+
+
 <!-- THIRD ROW ////////////////////////////////////////// -->
 
 	<div class="row article-row">
@@ -54,9 +54,9 @@
 			<%= render featured_article %>
 		<% end %>
 	</div>
-<% end %>
 
-<% if @featured.count >= 10 %>
+
+
 <!--  FORTH ROW                       -->
 	
 	<div class="row article-row">
@@ -64,16 +64,12 @@
 			<%= render featured_article %>
 		<% end %>
 	</div>
-<% end %>
+
 
 
 	
 </div>
-<% if signed_in? && current_user.admin? %>
-<div class="text-center hidden-xs">
-<%= will_paginate @featured, renderer: BootstrapPagination::Rails %>
-</div>
-<% end %>
+
 </div>
 
 
@@ -89,7 +85,7 @@
 
 	<div class="article-list">
 
-		<% @featured.first(13).each do |item| %>
+		<% @featured.each do |item| %>
 			<div class="<%= cycle('list-odd', 'list-even') %>">
 				<div class="container">
 					<div class="article-item-xs col-xs-12">
