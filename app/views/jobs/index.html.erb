@@ -9,211 +9,30 @@
 
 <div class="container">
     <div class="col-lg-3 job-nav">
-        <ul class="nav nav-pills nav-stacked">
-            <li>
-                <a href="/jobs">
-                    <span>All Jobs</span>
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-                </a>
-            </li>
-            <li class="active disabled">
-                <a href="#" class="text-center">
-                    Hours
-                </a>
-            </li>
-            <li>
-                <a href="/jobs/category/full time">
-                    <span>Full Time</span>
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-
-                </a>
-            </li>
-            <li>
-                <a href="/jobs/category/part time">
-                    <span>Part Time</span>
-                    
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-            
-                    
-                </a>
-            </li>
-            <li>
-                <a href="/jobs/category/freelance">
-                    <span>Freelance</span>
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-                </a>
-            </li>
-            <li>
-                <a href="/jobs/category/temp seasonal">
-                    <span>Temp/Seasonal</span>
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-                </a>
-            </li>
-
-            <li class="active disabled">
-                <a href="#" class="text-center">
-                    Category
-                </a>
-            </li>
-            <li>
-                <a href="/jobs/category/barista">
-                    <span>Barista</span>
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-                </a>
-            </li>
-            <li>
-                <a href="/jobs/category/manager">
-                    <span>Manager</span>
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-                </a>
-            </li>
-            <li>
-                <a href="/jobs/category/trainer">
-                    <span>Trainer</span>
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-                </a>
-            </li>
-            <li>
-                <a href="/jobs/category/roaster">
-                    <span>Roaster</span>
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-                </a>
-            </li>
-            <li>
-                <a href="/jobs/category/sales">
-                    <span>Sales</span>
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-                </a>
-            </li>
-            <li>
-                <a href="/jobs/category/logistics">
-                    <span>Logistics</span>
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-                </a>
-            </li>
-            <li>
-                <a href="/jobs/category/food">
-                    <span>Food</span>
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-                </a>
-            </li>
-            <li>
-                <a href="/jobs/category/other">
-                    <span>Other</span>
-                    <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-                </a>
-            </li>
-        </ul>
-        <a href="/jobs/new">
-            <img src="http://i.imgur.com/dDgQuc3.png" class="img-responsive new-job-img">
-        </a>
+        <%= render 'job_sidebar' %>    
     </div>
+
     <div class="col-lg-9">
         <% if params[:category] %>
-        <h1 class="job-board text-center"><%= params[:category].upcase %></h1>
+            <h1 class="job-board text-center"><%= params[:category].upcase %></h1>
         <% else %>
-        <h1 class="job-board text-center">JOB BOARD</h1>
-        <% end %>
-    <% if @recent_jobs.count == 0 && @older_jobs.count == 0 %>
-        <div class="alert alert-danger">
-            <p>I'm sorry, we can't find any jobs for that at the moment</p>
-        </div>
-        <% else %>
-        <% @recent_jobs.each do |job| %>
-            
-            <div class="panel panel-job panel-info">
-                <%= link_to job do %>
-                <div class="panel-body">
-
-                    <% if job.job_type == "Full Time" %>
-                    <span class="label label-job label-primary"><%= job.job_type %></span>
-                    <% end %>
-
-                    <% if job.job_type == "Part Time" %>
-                    <span class="label label-job label-success"><%= job.job_type %></span>
-                    <% end %>
-
-                    <% if job.job_type == "Freelance" %>
-                    <span class="label label-job label-warning"><%= job.job_type %></span>
-                    <% end %>
-
-                     <% if job.job_type == "Temp/Seasonal" %>
-                    <span class="label label-job label-info"><%= job.job_type %></span>
-                    <% end %>
-
-                     <% if job.job_type == "Intern" %>
-                    <span class="label label-job label-default"><%= job.job_type %></span>
-                    <% end %>
-
-                    
-                    <strong><%= job.title %></strong>
-                    <span class="job-summary">at <%= job.company %></span>
-                    <span class="job-summary">in <%= job.location %></span>
-
-                    <!-- ADMIN FUNCTIONALITY -->
-
-                    <% if signed_in? && current_user.admin? %>
-                    
-                        <%= link_to job, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                        <span class="glyphicon glyphicon-trash close"></span>
-                        <% end %>
-                        <%= link_to edit_job_path(job) do %>
-                           <span class="glyphicon glyphicon-cog close"></span>
-                        <% end %>
-                    <% end %>
-                </div>
-                
-                <% end %>
-            </div>
-            
+            <h1 class="job-board text-center">JOB BOARD</h1>
         <% end %>
 
-        <% @older_jobs.each do |job| %>
-            
-            <div class="panel panel-default">
-                <div class="panel-body">
-
-                    <% if job.job_type == "Full Time" %>
-                    <span class="label label-job label-primary"><%= job.job_type %></span>
-                    <% end %>
-
-                    <% if job.job_type == "Part Time" %>
-                    <span class="label label-job label-success"><%= job.job_type %></span>
-                    <% end %>
-
-                    <% if job.job_type == "Freelance" %>
-                    <span class="label label-job label-warning"><%= job.job_type %></span>
-                    <% end %>
-
-                     <% if job.job_type == "Temp/Seasonal" %>
-                    <span class="label label-job label-info"><%= job.job_type %></span>
-                    <% end %>
-
-                     <% if job.job_type == "Intern" %>
-                    <span class="label label-job label-default"><%= job.job_type %></span>
-                    <% end %>
-
-                    
-                    <strong><%= job.title %></strong>
-                    <small>at <%= job.company %></small>
-                    <small>in <%= job.location %></small>
-
-
-                    <!-- ADMIN FUNCTIONALITY -->
-
-                    <% if signed_in? && current_user.admin? %>
-                    <%= link_to edit_job_path(job) do %>
-                        <button type="button" class="close" aria-hidden="true"><span class="glyphicon glyphicon-cog"></span></button
-                    <% end %>
-                    <%= link_to job, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <button type="button" class="close" aria-hidden="true"><span class="glyphicon glyphicon-trash"></span></button>
-                    <% end %>
-                    <% end %>
-                </div>
+        <% if @recent_jobs.count == 0 && @older_jobs.count == 0 %>
+            <div class="alert alert-danger">
+                <p>I'm sorry, we can't find any jobs for that at the moment</p>
             </div>
 
+        <% else %>
+            <%= render 'recent' %>
+            <%= render 'older' %>
         <% end %>
-    <% end %>
+
+        <% if signed_in? && current_user.admin? %>
+            <%= render 'unverified' %>
+        <% end %>
+
     </div>
     
 </div>

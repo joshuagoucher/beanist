@@ -11,6 +11,10 @@ class Job < ActiveRecord::Base
   	where(verified: true)
   end
 
+  def self.unverified_jobs
+    where(verified: false)
+  end
+
   def self.recent_jobs
   	where(created_at: 1.week.ago..Time.now)
   end

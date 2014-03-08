@@ -1,0 +1,44 @@
+<% @unverified.each do |job| %>
+     <div class="panel panel-job panel-danger">
+            <%= link_to job do %>
+                <div class="panel-body">
+
+                    <% if job.job_type == "Full Time" %>
+                        <span class="label label-job label-primary"><%= job.job_type %></span>
+                    <% end %>
+
+                    <% if job.job_type == "Part Time" %>
+                        <span class="label label-job label-success"><%= job.job_type %></span>
+                    <% end %>
+
+                    <% if job.job_type == "Freelance" %>
+                        <span class="label label-job label-warning"><%= job.job_type %></span>
+                    <% end %>
+
+                     <% if job.job_type == "Temp/Seasonal" %>
+                        <span class="label label-job label-info"><%= job.job_type %></span>
+                    <% end %>
+
+                     <% if job.job_type == "Intern" %>
+                        <span class="label label-job label-default"><%= job.job_type %></span>
+                    <% end %>
+
+                    
+                    <strong>UNVERIFIED: <%= job.title %></strong>
+                    <span class="job-summary">at <%= job.company %></span>
+                    <span class="job-summary">in <%= job.location %></span>
+
+                     <!-- ADMIN FUNCTIONALITY -->
+                    <% if signed_in? && current_user.admin? %>
+                    
+                        <%= link_to job, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                            <span class="glyphicon glyphicon-trash close"></span>
+                        <% end %>
+                        <%= link_to edit_job_path(job) do %>
+                           <span class="glyphicon glyphicon-cog close"></span>
+                        <% end %>
+                    <% end %>
+                </div>
+            <% end %>
+        </div>
+<% end %>
