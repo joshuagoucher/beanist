@@ -32,6 +32,12 @@
         <% if signed_in? && current_user.admin? %>
             <%= render 'unverified' %>
         <% end %>
+        <div class="page-header"></div>
+        
+            <%= link_to new_job_path do %>
+                
+                    <p class="bg-primary text-center">POST A JOB - IT'S FREE!</p>
+            <% end %>
         
 
     </div>
