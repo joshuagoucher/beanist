@@ -6,10 +6,11 @@ class JobsController < ApplicationController
     if params[:category]
       @recent_jobs = Job.recent_jobs.verified_jobs.tagged_with(params[:category])
       @older_jobs = Job.older_jobs.verified_jobs.tagged_with(params[:category])
+      @unverified = Job.unverified_jobs
     else
       @recent_jobs = Job.recent_jobs.verified_jobs.reverse
       @older_jobs = Job.older_jobs.verified_jobs.reverse
-      @unverified = Job.unverified_jobs.reverse
+      @unverified = Job.unverified_jobs
 
     respond_to do |format|
       format.html # index.html.erb

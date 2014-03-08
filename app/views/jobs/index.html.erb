@@ -28,10 +28,11 @@
             <%= render 'recent' %>
             <%= render 'older' %>
         <% end %>
-
+        
         <% if signed_in? && current_user.admin? %>
             <%= render 'unverified' %>
         <% end %>
+        
 
     </div>
     
