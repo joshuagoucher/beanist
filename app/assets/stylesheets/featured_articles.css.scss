@@ -158,8 +158,18 @@
 
 .nav-options {
 	margin-top: 15px;
-	color: $gray-lighter;
-	letter-spacing: 1px;
+	a {
+		color: $gray-lighter;
+		font-family: 'Droid Sans', sans-serif;
+		font-weight: bold;
+		text-transform: uppercase;
+		&:hover {
+			color: $gray-light;
+			text-decoration: none;
+		}
+	}
+
+
 }
 
 .tagline {
@@ -392,12 +402,15 @@
 	margin-right: 15px;
 }
 
-.panel-job a {
+.panel-job {
+	line-height: 30px;
+	 a {
 	color: $gray-dark;
 	&:hover {
 		color:$gray-dark;
 		text-decoration: none;
 	}
+}
 }
 
 .job-summary {
