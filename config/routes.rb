@@ -22,6 +22,8 @@ Beanist2::Application.routes.draw do
 
   get '/:id',      to: 'user_pages#index'
 
+  get '/r/:id', to: 'featured_articles#show'
+
  
 
   get 'jobs/category/:category', to: 'jobs#index', as: :category
