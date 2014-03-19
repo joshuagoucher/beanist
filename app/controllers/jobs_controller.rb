@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_filter :admin_user, except: [:new, :create, :thankyou, :index, :show]
+  before_filter :admin_user
   # GET /jobs
   # GET /jobs.json
   def index
