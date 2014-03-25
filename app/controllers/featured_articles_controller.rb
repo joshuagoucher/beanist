@@ -13,7 +13,6 @@ class FeaturedArticlesController < ApplicationController
 
   def show
   	@article = FeaturedArticle.find(params[:id])
-    redirect_to @article.url
   end
 
   def edit
@@ -55,6 +54,11 @@ class FeaturedArticlesController < ApplicationController
       format.html { redirect_to :back }
       format.js
     end
+  end
+
+  def redirect
+    @article = FeaturedArticle.find(params[:id])
+    redirect_to @article.url
   end
 
   private

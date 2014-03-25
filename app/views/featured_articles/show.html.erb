@@ -1,7 +1,17 @@
-<%= link_to @article.img_url %>
-<%= @article.editors_comment %>
-<%= @article.title %>
-<%= @article.summary %>
-<%= link_to @article.url %>
+<% provide(:title, "#{@article.title}") %>
+<div class="container">
+	<div class="col-lg-6 col-lg-offset-3">
+		<h1 class="article-title col-lg-12 h2"><%= @article.title %></h1>
+		<img src="<%= @article.img_url %>" class="article-img col-lg-12">
 
-<%= link_to 'Back to Articles', featured_articles_path %>
+		<%= simple_format @article.summary + "..." + link_to("Read the full article", @article.url), class: "article-summary col-lg-12" %>
+
+		<!-- <p class="col-lg-12 article-link text-right">
+			<a href="<%= @article.url %>">
+				Read the full article 
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</p> -->
+	</div>
+
+</div>

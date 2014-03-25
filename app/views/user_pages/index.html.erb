@@ -94,11 +94,11 @@
 						
 						<% if item.external? %>
 							<h1 class="title-xs">
-								<%= link_to item.title, item, target: "_blank" %>
+								<%= link_to item.title, redirect_path(item), target: "_blank" %>
 							</h1>
 						<% else %>
 							<h1 class="title-xs">
-								<%= link_to item.title, item %>
+								<%= link_to redirect_path(item), item %>
 							</h1>
 						<% end %>
 						<p class="summary-xs">
