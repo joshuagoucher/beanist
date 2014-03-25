@@ -24,6 +24,8 @@ Beanist2::Application.routes.draw do
 
   get '/r/:id', to: 'featured_articles#redirect', as: :redirect
 
+  get '/:id', to: 'user_pages#index'
+
  
 
   get 'jobs/category/:category', to: 'jobs#index', as: :category
